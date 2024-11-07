@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/assets/favicon.jpeg" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="stylesheet" href="/css/fonts.css" />
   <link rel="stylesheet" href="/css/global.css" />
   <link rel="stylesheet" href="/tailwind.css" />
@@ -15,11 +15,20 @@
 <body>
   <div class="container mx-auto px-4">
     {% include "components/navbar.njk" %}
-    <div class="space-y-24">
+    <div class="space-y-36">
       {{ content | safe }}
     </div>
     {% include "components/footer.njk" %}
   </div>
+  <button
+    class="px-6 rounded-full bg-pure-white text-black flex items-center gap-2 justify-between py-2 border-2 border-black w-48 fixed bottom-8 right-8">
+    <span>talk</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
+      <path
+        d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
+      </path>
+    </svg>
+  </button>
 </body>
 
 </html>

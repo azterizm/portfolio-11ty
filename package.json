@@ -6,7 +6,7 @@
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
     "watch": "npx @11ty/eleventy --watch",
-    "css": "tailwindcss -i ./src/css/global.css -o ./_site/css/global.css --watch"
+    "css": "tailwindcss -i ./src/_includes/tailwind.css -o ./_site/tailwind.css --watch"
   },
   "keywords": [],
   "author": "",
