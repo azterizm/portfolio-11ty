@@ -1,0 +1,22 @@
+{
+  "name": "eleventy-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "watch": "npx @11ty/eleventy --watch",
+    "css": "tailwindcss -i ./src/css/global.css -o ./_site/css/global.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
