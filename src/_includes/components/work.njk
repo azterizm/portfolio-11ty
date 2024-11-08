@@ -7,8 +7,20 @@
     </div>
   </div>
   <div class="grid grid-cols-8 mt-16 gap-x-8 gap-y-16">
+
+
+    {% set works = [
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400'
+    ] %}
+
+    {% for work in works %}
     <div class="col-span-3">
-      <img src="https://placehold.co/600x400" alt="" class="w-full mb-4 rounded-xl" />
+      <img src="{{ work }}" alt="" class="w-full mb-4 rounded-xl" />
       <p class="text-3xl">clever page</p>
       <p class="text-md">2024</p>
     </div>
@@ -29,122 +41,10 @@
       </button>
     </div>
     <div class="col-span-8 bg-black h-[1px]"></div>
-
-    <div class="col-span-3">
-      <img src="https://placehold.co/600x400" alt="" class="w-full mb-4 rounded-xl" />
-      <p class="text-3xl">clever page</p>
-      <p class="text-md">2024</p>
-    </div>
-    <div class="col-span-2 flex flex-col justify-between">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda iusto culpa error cumque! Ratione,
-        consectetur quis nostrum quia culpa exercitationem dolore illo expedita id non veritatis dolorem quaerat saepe
-        aut.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet consequuntur? Eos, aperiam, neque,
-        expedita sit voluptatibus </p>
-    </div>
-    <div class="col-span-3 flex flex-col justify-end">
-      <button class="p-4 w-full bg-white border-2 border-black flex items-center justify-center rounded-full">
-        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#000000" viewBox="0 0 256 256">
-          <path
-            d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div class="col-span-8 bg-black h-[1px]"></div>
-
-    <div class="col-span-3">
-      <img src="https://placehold.co/600x400" alt="" class="w-full mb-4 rounded-xl" />
-      <p class="text-3xl">clever page</p>
-      <p class="text-md">2024</p>
-    </div>
-    <div class="col-span-2 flex flex-col justify-between">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda iusto culpa error cumque! Ratione,
-        consectetur quis nostrum quia culpa exercitationem dolore illo expedita id non veritatis dolorem quaerat saepe
-        aut.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet consequuntur? Eos, aperiam, neque,
-        expedita sit voluptatibus </p>
-    </div>
-    <div class="col-span-3 flex flex-col justify-end">
-      <button class="p-4 w-full bg-white border-2 border-black flex items-center justify-center rounded-full">
-        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#000000" viewBox="0 0 256 256">
-          <path
-            d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div class="col-span-8 bg-black h-[1px]"></div>
-
-    <div class="col-span-3">
-      <img src="https://placehold.co/600x400" alt="" class="w-full mb-4 rounded-xl" />
-      <p class="text-3xl">clever page</p>
-      <p class="text-md">2024</p>
-    </div>
-    <div class="col-span-2 flex flex-col justify-between">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda iusto culpa error cumque! Ratione,
-        consectetur quis nostrum quia culpa exercitationem dolore illo expedita id non veritatis dolorem quaerat saepe
-        aut.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet consequuntur? Eos, aperiam, neque,
-        expedita sit voluptatibus </p>
-    </div>
-    <div class="col-span-3 flex flex-col justify-end">
-      <button class="p-4 w-full bg-white border-2 border-black flex items-center justify-center rounded-full">
-        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#000000" viewBox="0 0 256 256">
-          <path
-            d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div class="col-span-8 bg-black h-[1px]"></div>
-
-    <div class="col-span-3">
-      <img src="https://placehold.co/600x400" alt="" class="w-full mb-4 rounded-xl" />
-      <p class="text-3xl">clever page</p>
-      <p class="text-md">2024</p>
-    </div>
-    <div class="col-span-2 flex flex-col justify-between">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda iusto culpa error cumque! Ratione,
-        consectetur quis nostrum quia culpa exercitationem dolore illo expedita id non veritatis dolorem quaerat saepe
-        aut.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet consequuntur? Eos, aperiam, neque,
-        expedita sit voluptatibus </p>
-    </div>
-    <div class="col-span-3 flex flex-col justify-end">
-      <button class="p-4 w-full bg-white border-2 border-black flex items-center justify-center rounded-full">
-        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#000000" viewBox="0 0 256 256">
-          <path
-            d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div class="col-span-8 bg-black h-[1px]"></div>
+    {% endfor %}
 
 
-    <div class="col-span-3">
-      <img src="https://placehold.co/600x400" alt="" class="w-full mb-4 rounded-xl" />
-      <p class="text-3xl">clever page</p>
-      <p class="text-md">2024</p>
-    </div>
-    <div class="col-span-2 flex flex-col justify-between">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda iusto culpa error cumque! Ratione,
-        consectetur quis nostrum quia culpa exercitationem dolore illo expedita id non veritatis dolorem quaerat saepe
-        aut.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet consequuntur? Eos, aperiam, neque,
-        expedita sit voluptatibus </p>
-    </div>
-    <div class="col-span-3 flex flex-col justify-end">
-      <button class="p-4 w-full bg-white border-2 border-black flex items-center justify-center rounded-full">
-        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#000000" viewBox="0 0 256 256">
-          <path
-            d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div class="col-span-8 bg-black h-[1px]"></div>
+
 
 
   </div>

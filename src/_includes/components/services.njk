@@ -3,11 +3,29 @@
     <h1 class="bg-white/10 backdrop-blur-lg text-8xl">services</h1>
     <img src="/assets/star.png" alt="" class='w-56' />
   </div>
+
+  {% set services = [
+  'web development',
+  'mobile app development',
+  'ai app development',
+  'system automation',
+  'digital design',
+  'technical consultation'
+  ] %}
+
+  {% for service in services %}
   <div>
-    <div class="py-4 border-b-[1px] border-black grid grid-cols-8">
-      <p class="col-span-3 text-3xl">website development</p>
-      <p class="col-span-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quisquam numquam eaque odio. Deserunt eveniet consequuntur quas sit labore temporibus laborum, enim rerum numquam ut assumenda tenetur doloribus natus explicabo.</p>
+    <div class="py-4 grid grid-cols-8">
+      <p class="font-heading col-span-3 text-3xl">{{ service }}</p>
+      <p class="col-span-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quisquam numquam eaque
+        odio. Deserunt eveniet consequuntur quas sit labore temporibus laborum, enim rerum numquam ut assumenda tenetur
+        doloribus natus explicabo.</p>
+    </div>
+
+    <div class="grid grid-cols-8">
+      <div class="bg-black h-[0.5px] col-span-5"></div>
     </div>
   </div>
+  {% endfor %}
 
 </div>
