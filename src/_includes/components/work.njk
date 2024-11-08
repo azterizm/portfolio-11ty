@@ -3,12 +3,11 @@
     <h1 class="bg-white/10 backdrop-blur-lg text-8xl">work</h1>
     <div class="relative">
       <img src="/assets/eye-bg.png" alt="" class='w-56' />
-      <div class="bg-pure-white w-12 h-16 rounded-[50%] absolute inset-8"></div>
+      <div id='eye-ball'
+        class="transition-all duration-100 ease-in-out bg-pure-white w-12 h-16 rounded-[50%] absolute inset-6"></div>
     </div>
   </div>
   <div class="grid grid-cols-8 mt-16 gap-x-8 gap-y-16">
-
-
     {% set works = [
     'https://placehold.co/600x400',
     'https://placehold.co/600x400',
@@ -19,16 +18,16 @@
     ] %}
 
     {% for work in works %}
-    <div class="col-span-3">
+    <div class="col-span-5 lg:col-span-3">
       <img src="{{ work }}" alt="" class="w-full mb-4 rounded-xl" />
       <p class="text-3xl">clever page</p>
       <p class="text-md">2024</p>
     </div>
-    <div class="col-span-2 flex flex-col justify-between">
+    <div class="col-span-5 -mt-12 lg:mt-0 lg:col-span-2 flex flex-col justify-between">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda iusto culpa error cumque! Ratione,
         consectetur quis nostrum quia culpa exercitationem dolore illo expedita id non veritatis dolorem quaerat saepe
         aut.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet consequuntur? Eos, aperiam, neque,
+      <p class="mt-4 lg:mt-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet consequuntur? Eos, aperiam, neque,
         expedita sit voluptatibus </p>
     </div>
     <div class="col-span-3 flex flex-col justify-end">
@@ -42,10 +41,5 @@
     </div>
     <div class="col-span-8 bg-black h-[1px]"></div>
     {% endfor %}
-
-
-
-
-
   </div>
 </div>
