@@ -10,25 +10,6 @@ body {
   color: #000040;
 }
 
-.text-animate {
-  overflow: hidden;
-}
-
-.text-animate span {
-  top: var(--top);
-  position: relative;
-  animation: textAnimate 1s cubic-bezier(0, 0.55, 0.45, 1);
-  animation-delay: var(--delay);
-  animation-fill-mode: forwards;
-}
-
-@keyframes textAnimate {
-  to {
-    top: 0
-  }
-}
-
-
 #nav-icon span:nth-child(1) {
   top: 0px;
 }
@@ -82,9 +63,57 @@ body {
   position: absolute;
   height: 5px;
   width: 100%;
+  border-radius: 8px;
   background: #000040;
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
   transition: .25s ease-in-out;
+}
+
+.text-animate {
+  overflow: hidden;
+}
+
+.text-animate span {
+  top: var(--top);
+  position: relative;
+  animation: textAnimate 1s cubic-bezier(0, 0.55, 0.45, 1);
+  animation-delay: var(--delay);
+  animation-fill-mode: forwards;
+}
+
+
+.animate-fadeOut {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes textAnimate {
+  to {
+    top: 0
+  }
 }
