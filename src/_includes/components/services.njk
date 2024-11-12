@@ -1,31 +1,44 @@
-<div>
+<div id='services'>
   <div class="flex items-center justify-between sticky top-2 left-0">
     <h1 class="bg-white/10 backdrop-blur-lg text-8xl">services</h1>
     <img src="/assets/star.png" alt="" class='w-56' />
   </div>
 
   {% set services = [
-  'web development',
-  'mobile app development',
-  'ai app development',
-  'system automation',
-  'digital design',
-  'technical consultation'
+  { name: 'web development', description: 'Crafting websites that don’t just look good—they "work" like a dream. I’ll
+  turn your vision into a pixel-perfect masterpiece, fully equipped to charm, convert, and conquer. It’s not just
+  development; it’s digital magic, one line of code at a time.' },
+  { name: 'app development', description: 'Apps that fit right in your pocket yet pack the punch of a
+  heavyweight. I bring mobile apps to life with buttery smooth performance, sleek designs, and features so smart they
+  might just predict your next move. Try replacing that with a template.' },
+  { name: 'ai app development', description: 'Adding AI into apps like espresso shots to lattes—strong, smooth, and
+  guaranteed to wake up your potential. From chatbots that get you to image recognition that’s scary accurate, I build
+  the AI so your app’s IQ goes off the charts.' },
+  { name: 'system automation', description: 'Manual tasks are so last decade. Let’s replace endless clicks and
+  keystrokes with automation that thinks, acts, and scales—like a super-efficient assistant that doesn’t need coffee
+  breaks. I’ll have your systems running themselves in no time.' },
+  { name: 'digital design', description: 'I design visuals that make you do a double-take and say, “Whoa.” From sleek
+  UI/UX to unforgettable branding, my designs are more than eye candy—they’re user-guided journeys in 4K.' },
+  { name: 'technical consultation', description: 'Got questions? I’ve got answers. I’ll diagnose, strategize, and
+  optimize tech solutions tailored to your unique business challenges. Think of me as your tech whisperer—except with
+  real solutions, not vague riddles.' }
   ] %}
 
   {% for service in services %}
-  <div>
-    <div class="py-4 grid grid-cols-8">
-      <p class="font-heading col-span-3 text-3xl">{{ service }}</p>
-      <p class="col-span-5 lg:col-span-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quisquam numquam eaque
-        odio. Deserunt eveniet consequuntur quas sit labore temporibus laborum, enim rerum numquam ut assumenda tenetur
-        doloribus natus explicabo.</p>
+  <div class="service-item" data-service="{{ loop.index }}">
+    <div class="py-4 grid grid-cols-8 cursor-pointer service-header">
+      <p class="select-none font-heading col-span-3 text-3xl">{{ service.name }}</p>
+      <p
+        class="col-span-5 lg:col-span-2 service-description opacity-0 h-0 overflow-hidden transition-all duration-500 ease-in-out">
+        {{ service.description }}</p>
     </div>
-
+    {% if not loop.last %}
     <div class="grid grid-cols-8">
       <div class="bg-black h-[0.5px] col-span-8 lg:col-span-5"></div>
     </div>
+    {% endif %}
   </div>
+
   {% endfor %}
 
 </div>
