@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/css/fonts.css" />
   <link rel="stylesheet" href="/css/global.css" />
   <link rel="stylesheet" href="/css/nav.css" />
-  <!-- <link rel="stylesheet" href="/css/transition.css" /> -->  
+  <link rel="stylesheet" href="/css/transition.css" />
   <link rel="stylesheet" href="/tailwind.css" />
   <title>{{title}} project | Abdullah Memon Portfolio Website</title>
 </head>
@@ -91,23 +91,15 @@
     </div>
     {% include "components/footer.njk" %}
   </div>
-  <button id='talk-btn'
-    class="px-6 rounded-full bg-pure-white text-black flex items-center gap-2 justify-between py-2 border-2 border-black w-48 fixed bottom-8 right-8 transition-transform duration-300 translate-x-56">
-    <span>talk</span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
-      <path
-        d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
-      </path>
-    </svg>
-  </button>
-  <script src='/assets/scripts/setup-project-page-animation.js'></script>
-  <script src='/assets/scripts/setup-project-page-layout.js'></script>
-  <script src='/assets/scripts/setup-scroll.js'></script>
-  <!-- <script src='/assets/scripts/setup-transition.js'></script> --> 
+  {% include "components/talk-btn.njk" %}
+  <script defer src='/assets/scripts/setup-project-page-animation.js'></script>
+  <script defer src='/assets/scripts/setup-project-page-layout.js'></script>
+  <script defer src='/assets/scripts/setup-scroll.js'></script>
+  <script defer src='/assets/scripts/setup-talk.js'></script>
+  <script defer src='/assets/scripts/setup-menu.js'></script>
+  <script src='/assets/scripts/setup-transition.js'></script>
+  <script src="//embed.typeform.com/next/embed.js"></script>
 
 </body>
 
 </html>
-
-
-

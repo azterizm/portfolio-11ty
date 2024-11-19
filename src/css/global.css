@@ -13,3 +13,7 @@ body {
 .prose {
   color: #000040 !important;
 }
+
+.talk-btn-content a {
+  text-decoration: none !important;
+}
