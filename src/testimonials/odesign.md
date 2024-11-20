@@ -3,7 +3,4 @@ name: "Peter Young"
 company: "odesign"
 location: "Ontario, Canada"
 ---
-[Awaiting approval]
-<!---
-Working with this full-stack developer has been an exceptional experience. His dedication and hard work are evident in every project he takes on. He consistently delivers quality work on time, even when facing complex challenges alone. I’ve yet to see him turn down a difficult task; no matter how ambitious the requirements, he tackles them head-on with remarkable speed and skill. He's proficient in the latest, most demanding technologies, ensuring every project is built securely and efficiently. I truly couldn’t ask for a better developer – he’s simply outstanding!
--->
+I've had the pleasure of working with Abdullah for several years, and I can confidently say he is a rare gem in the programming world. His talent, patience, and unwavering dedication to his work truly set him apart. Together, we’ve tackled some amazing projects, and I wouldn’t hesitate to collaborate with him again!
