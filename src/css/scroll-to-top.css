@@ -1,0 +1,10 @@
+
+#scroll-to-top-btn {
+  opacity: 0; /* Hide the button initially */
+  transform: translateX(-200%); /* Move the button out of the screen initially */
+}
+
+#scroll-to-top-btn.visible {
+  opacity: 1; /* Show the button when it's ready */
+  transform: translateX(0); /* Bring the button into view */
+}

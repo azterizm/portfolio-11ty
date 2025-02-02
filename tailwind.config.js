@@ -30,6 +30,11 @@ module.exports = {
         'hero': ['12rem', { lineHeight: '1' }],
         'display': ['16rem', { lineHeight: '1' }],
       },
+      screens: {
+        'xs': '30rem',
+        '2xl': '100rem',
+        '3xl': '120rem',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],

@@ -7,7 +7,8 @@ function handleMenu() {
 }
 btn.addEventListener('click', handleMenu)
 mobileNav.addEventListener('click', e => {
-  if (e.target?.getAttribute('href')?.startsWith('#')) {
+  console.log(e.target)
+  if (e.target?.getAttribute('href')?.startsWith('#') || e.target?.getAttribute('href').startsWith('/#')) {
     handleMenu()
   }
 })

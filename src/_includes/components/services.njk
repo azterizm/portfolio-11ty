@@ -1,7 +1,7 @@
 <div id='services'>
   <div class="flex items-center justify-between sticky top-2 left-0 z-10">
     <h1 class="bg-white/10 backdrop-blur-lg text-8xl">services</h1>
-    <img src="/assets/star.png" alt="" class='w-56' />
+    <img src="/assets/star.png" alt="" class='w-56 hidden sm:block' />
   </div>
 
   {% set services = [
@@ -26,11 +26,16 @@
 
   {% for service in services %}
   <div class="service-item" data-service="{{ loop.index }}">
-    <div class="py-4 grid grid-cols-8 cursor-pointer service-header">
-      <p class="select-none font-heading col-span-3 text-3xl">{{ service.name }}</p>
+    <div class="py-4 grid grid-cols-4 sm:grid-cols-8 cursor-pointer service-header relative gap-y-4 sm:gap-y-0">
+      <p class="select-none font-heading col-span-3 text-3xl">
+        {{ service.name }}
+      </p>
       <p
         class="col-span-5 lg:col-span-2 service-description opacity-0 h-0 overflow-hidden transition-all duration-500 ease-in-out">
         {{ service.description }}</p>
+      <span
+        class="col-span-5 lg:col-span-2 text-3xl -translate-x-8 service-plus transition-transform duration-500 ease-in-out hidden lg:block rotate-0"
+        >+</span>
     </div>
     {% if not loop.last %}
     <div class="grid grid-cols-8">

@@ -5,6 +5,7 @@ let activeService = null;
 serviceItems.forEach(item => {
   const header = item.querySelector('.service-header');
   const description = item.querySelector('.service-description');
+  const plus = item.querySelector('.service-plus');
 
   let descriptionHeight;
 
@@ -13,6 +14,7 @@ serviceItems.forEach(item => {
       description.style.height = '0px';
       description.classList.remove('active');
       header.classList.remove('pb-8');
+      plus.style.transform = 'translateX(-2rem) rotate(0deg)';
       activeService = null;
       return;
     }
@@ -23,6 +25,9 @@ serviceItems.forEach(item => {
       activeDescription.style.height = '0px';
       activeDescription.classList.remove('active');
       activeHeader.classList.remove('pb-8');
+      document.querySelectorAll('.service-plus').forEach(plus => {
+        plus.style.transform = 'translateX(-2rem) rotate(0deg)';
+      });
     }
 
     if (!descriptionHeight) {
@@ -36,6 +41,7 @@ serviceItems.forEach(item => {
     description.style.height = descriptionHeight;
     description.classList.add('active');
     header.classList.add('pb-8');
+    plus.style.transform = 'translateX(-2rem) rotate(180deg)';
 
     activeService = item;
   });

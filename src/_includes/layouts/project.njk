@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/css/global.css" />
   <link rel="stylesheet" href="/css/nav.css" />
   <link rel="stylesheet" href="/css/transition.css" />
+  <link rel="stylesheet" href="/css/scroll-to-top.css" />
   <link rel="stylesheet" href="/tailwind.css" />
   <title>{{title}} project | Abdullah Memon Portfolio Website</title>
 </head>
@@ -92,11 +93,13 @@
     {% include "components/footer.njk" %}
   </div>
   {% include "components/talk-btn.njk" %}
+  {% include 'components/scroll-to-top.njk' %}
   <script defer src='/assets/scripts/setup-project-page-animation.js'></script>
   <script defer src='/assets/scripts/setup-project-page-layout.js'></script>
   <script defer src='/assets/scripts/setup-scroll.js'></script>
   <script defer src='/assets/scripts/setup-talk.js'></script>
   <script defer src='/assets/scripts/setup-menu.js'></script>
+  <script defer src='/assets/scripts/setup-scroll-to-top.js'></script>
   <script src='/assets/scripts/setup-transition.js'></script>
   <script src="//embed.typeform.com/next/embed.js"></script>
 
