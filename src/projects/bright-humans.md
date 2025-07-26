@@ -54,9 +54,9 @@ integrated payment processing are implemented and operational. The platform prov
 engaging experience for both clients seeking knowledge and experts sharing their skills.
 
 
-![Screenshot 1](/assets/screenshots/genaro/screenshot1.png) 
-![Screenshot 3](/assets/screenshots/genaro/screenshot3.png) 
-![Screenshot 4](/assets/screenshots/genaro/screenshot4.png) 
+![Screenshot 1](/assets/screenshots/bright-humans/screenshot1.png) 
+![Screenshot 3](/assets/screenshots/bright-humans/screenshot3.png) 
+![Screenshot 4](/assets/screenshots/bright-humans/screenshot4.png) 
 
 ## Technologies Used
 
