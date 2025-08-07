@@ -104,12 +104,17 @@
 
   {% for service in services %}
   <div class="service-item" data-service="{{ loop.index }}">
-    <div class="py-4 grid grid-cols-4 sm:grid-cols-8 cursor-pointer service-header relative gap-y-4 sm:gap-y-0">
-      <p class="select-none font-heading col-span-3 text-3xl">
+    <div class="py-4 grid grid-cols-8 cursor-pointer service-header relative">
+      <p class="select-none font-heading col-span-7 text-3xl">
         {{ service.name }}
       </p>
-      <div
-        class="col-span-5 lg:col-span-2 service-description opacity-0 h-0 overflow-hidden transition-all duration-500 ease-in-out">
+      <span
+        class="col-span-1 text-3xl service-plus transition-transform duration-500 ease-in-out flex items-center justify-end rotate-0"
+        >+</span>
+    </div>
+    <div
+      class="service-description opacity-0 h-0 overflow-hidden transition-all duration-500 ease-in-out">
+      <div class="pt-2 pb-8">
         <p class="text-white/80">{{ service.description }}</p>
         <h3 class="font-bold mt-6 mb-3 text-lg">{{ service.process_title }}</h3>
         <ol class="list-decimal list-inside space-y-3 text-white/80">
@@ -118,9 +123,6 @@
           {% endfor %}
         </ol>
       </div>
-      <span
-        class="col-span-5 lg:col-span-2 text-3xl -translate-x-8 service-plus transition-transform duration-500 ease-in-out hidden lg:block rotate-0"
-        >+</span>
     </div>
     {% if not loop.last %}
     <div class="grid grid-cols-8">
@@ -128,7 +130,6 @@
     </div>
     {% endif %}
   </div>
-
   {% endfor %}
 
 </div>
