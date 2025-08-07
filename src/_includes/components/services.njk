@@ -7,7 +7,7 @@
   {% set services = [
   { 
     name: 'web development', 
-    description: 'Crafting websites that don’t just look good—they "work" like a dream. I’ll
+    description: 'Crafting websites that don’t just look good-they "work" like a dream. I’ll
   turn your vision into a pixel-perfect masterpiece, fully equipped to charm, convert, and conquer. It’s not just
   development; it’s digital magic, one line of code at a time.',
     process_title: 'Our Web Development Process',
@@ -32,14 +32,14 @@
       '<strong>UI/UX Prototyping:</strong> We design an engaging user interface and create interactive prototypes to visualize the user experience before writing a single line of code.',
       '<strong>Technical Architecture:</strong> We choose the optimal tech stack (native, hybrid, or cross-platform) and design a scalable and secure backend architecture.',
       '<strong>Iterative Development:</strong> Building in agile sprints, we deliver functional builds regularly for your review, ensuring transparency and alignment throughout the process.',
-      '<strong>Comprehensive Testing:</strong> We conduct extensive testing—from unit and integration tests to user acceptance testing—to ensure a high-quality, stable, and secure application.',
+      '<strong>Comprehensive Testing:</strong> We conduct extensive testing-from unit and integration tests to user acceptance testing—to ensure a high-quality, stable, and secure application.',
       '<strong>App Store Submission:</strong> We navigate the complexities of submitting to the Apple App Store and Google Play Store, ensuring compliance with all guidelines.',
       '<strong>Post-Launch Analytics & Support:</strong> After launch, we monitor app performance, gather user feedback, and provide ongoing maintenance to iterate and improve.'
     ]
   },
   { 
     name: 'ai app development', 
-    description: 'Adding AI into apps like espresso shots to lattes—strong, smooth, and
+    description: 'Adding AI into apps like espresso shots to lattes-strong, smooth, and
   guaranteed to wake up your potential. From chatbots that get you to image recognition that’s scary accurate, I build
   the AI so your app’s IQ goes off the charts.',
     process_title: 'Our AI App Development Process',
@@ -56,7 +56,7 @@
   { 
     name: 'system automation', 
     description: 'Manual tasks are so last decade. Let’s replace endless clicks and
-  keystrokes with automation that thinks, acts, and scales—like a super-efficient assistant that doesn’t need coffee
+  keystrokes with automation that thinks, acts, and scales-like a super-efficient assistant that doesn’t need coffee
   breaks. I’ll have your systems running themselves in no time.',
     process_title: 'Our System Automation Process',
     process: [
@@ -72,7 +72,7 @@
   { 
     name: 'digital design', 
     description: 'I design visuals that make you do a double-take and say, “Whoa.” From sleek
-  UI/UX to unforgettable branding, my designs are more than eye candy—they’re user-guided journeys in 4K.',
+  UI/UX to unforgettable branding, my designs are more than eye candy-they’re user-guided journeys in 4K.',
     process_title: 'Our Digital Design Process',
     process: [
       '<strong>Discovery & Brand Immersion:</strong> We start by understanding your brand, target audience, and business goals to ensure our design strategy is perfectly aligned.',
@@ -87,7 +87,7 @@
   { 
     name: 'technical consultation', 
     description: 'Got questions? I’ve got answers. I’ll diagnose, strategize, and
-  optimize tech solutions tailored to your unique business challenges. Think of me as your tech whisperer—except with
+  optimize tech solutions tailored to your unique business challenges. Think of me as your tech whisperer-except with
   real solutions, not vague riddles.',
     process_title: 'Our Technical Consultation Process',
     process: [
@@ -115,9 +115,9 @@
     <div
       class="service-description opacity-0 h-0 overflow-hidden transition-all duration-500 ease-in-out">
       <div class="pt-2 pb-8">
-        <p class="text-white/80">{{ service.description }}</p>
+        <p class="text-black/80">{{ service.description }}</p>
         <h3 class="font-bold mt-6 mb-3 text-lg">{{ service.process_title }}</h3>
-        <ol class="list-decimal list-inside space-y-3 text-white/80">
+        <ol class="list-decimal list-inside space-y-3 text-black/80">
           {% for item in service.process %}
           <li>{{ item | safe }}</li>
           {% endfor %}
