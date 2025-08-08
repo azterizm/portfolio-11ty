@@ -7,3 +7,7 @@ btns.forEach(btn => {
     anchor.click()
   })
 })
+
+function ctaTalkHandle() {
+  btns[0].click()
+}
