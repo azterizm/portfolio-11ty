@@ -34,7 +34,7 @@ sustainable financial model that supports experts through commissions and tiered
 
 Developing Bright Humans involved navigating several complex challenges:
 -   **Dynamic Search and Matching**: Implementing an intelligent search and filtering system to
-effectively match clients with the most suitable expert experts based on subjects, availability, and
+effectively match clients with the most suitable experts based on subjects, availability, and
 preferences.
 -   **Secure and Flexible Payment System**: Designing and integrating a robust payment gateway (Stripe)
 to handle secure transactions, manage commissions for the platform, and implement a tiered monthly fee
@@ -137,5 +137,5 @@ The architecture was designed for **high scalability and speed**, capable of han
 
 ## Conclusion
 
-The Bright Humans project successfully transformed a vision into a fully functional, secure, and scalable global online tutoring platform. By systematically tackling complex requirements, integrating robust third-party services like Stripe, and diligently addressing user feedback, we delivered a platform that not only meets but exceeds the demands of modern online education. The solution stands as a testament to effective problem discovery, iterative feature development, and a commitment to delivering a high-quality, secure, and efficient experience for students and tutors worldwide.
+The Bright Humans project successfully transformed a vision into a fully functional, secure, and scalable global online tutoring platform. By systematically tackling complex requirements, integrating robust third-party services like Stripe, and diligently addressing user feedback, we delivered a platform that not only meets but exceeds the demands of modern online education. The solution stands as a testament to effective problem discovery, iterative feature development, and a commitment to delivering a high-quality, secure, and efficient experience for students and experts worldwide.
 
