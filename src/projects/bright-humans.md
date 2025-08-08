@@ -1,7 +1,7 @@
 ---
 layout: layouts/project.njk
 title: Bright Humans
-description: "A global online tutoring platform connecting clients with expert tutors across diverse
+description: "A global online tutoring platform connecting clients with expert across diverse
 subjects, featuring comprehensive booking, secure payments, and real-time communication capabilities."
 logo: "https://brighthumans.com/logo.svg"
 main_image: "/assets/screenshots/bright-humans/main.png"
@@ -18,7 +18,7 @@ Bright Humans is a state-of-the-art online tutoring platform established in 2025
 revolutionize the way clients connect with private experts. The platform facilitates both online and
 in-person sessions across an expansive range of subjects, from academic disciplines like mathematics and
 languages to creative arts, cooking, music, professional development, and sports. It streamlines the
-entire tutoring process, from discovering expert experts and seamless communication to booking sessions,
+entire tutoring process, from discovering experts and seamless communication to booking sessions,
 secure payment processing, and a structured compensation model for experts based on bookings and monthly
 fees.
 
@@ -74,30 +74,30 @@ engaging experience for both clients seeking knowledge and experts sharing their
 
 The project was structured into several key milestones, each building upon the last to deliver a comprehensive solution.
 
-### **Phase 1: Laying the Foundation (Milestone 1: User Foundation & Tutor Showcase)**
+### **Phase 1: Laying the Foundation (Milestone 1: User Foundation & Expert Showcase)**
 
-*   **Problem:** A need for a secure and structured entry point for both students and tutors, and a way for tutors to present their offerings.
-*   **Solution:** We developed a robust user authentication system, including secure registration, login/logout, and session management with password hashing. Basic student profiles were implemented, alongside a detailed tutor profile creation and publishing system. Tutors could create comprehensive profiles with their bio, subjects, hourly rates, and preferred video calling platforms, and manage their profile's visibility. This phase established the secure base for all subsequent interactions.
+*   **Problem:** A need for a secure and structured entry point for both clients and experts, and a way for experts to present their offerings.
+*   **Solution:** We developed a robust user authentication system, including secure registration, login/logout, and session management with password hashing. Basic client profiles were implemented, alongside a detailed expert profile creation and publishing system. Experts could create comprehensive profiles with their bio, subjects, hourly rates, and preferred video calling platforms, and manage their profile's visibility. This phase established the secure base for all subsequent interactions.
 
-### **Phase 2: Connecting Learners & Educators (Milestone 2: Tutor Discovery & Initial Communication)**
+### **Phase 2: Connecting Learners & Educators (Milestone 2: Expert Discovery & Initial Communication)**
 
-*   **Problem:** Students needed an effective way to find suitable tutors and communicate with them securely within the platform.
-*   **Solution:** We built an intuitive tutor search and listing functionality, allowing students to filter tutors by subject. Detailed tutor profiles were made viewable to prospective students. Crucially, a real-time, in-platform messaging system was developed, ensuring instant communication between students and tutors. A significant enhancement was the integration of **chat content censorship**, automatically redacting sensitive personal information (like phone numbers and emails) and inappropriate language, thereby ensuring a safe and professional communication environment. UI/UX was refined for optimal search, browsing, and messaging experiences, with clear indicators for new messages.
+*   **Problem:** Clients needed an effective way to find suitable experts and communicate with them securely within the platform.
+*   **Solution:** We built an intuitive expert search and listing functionality, allowing clients to filter experts by subject. Detailed expert profiles were made viewable to prospective clients. Crucially, a real-time, in-platform messaging system was developed, ensuring instant communication between clients and experts. A significant enhancement was the integration of **chat content censorship**, automatically redacting sensitive personal information (like phone numbers and emails) and inappropriate language, thereby ensuring a safe and professional communication environment. UI/UX was refined for optimal search, browsing, and messaging experiences, with clear indicators for new messages.
 
-### **Phase 3: Streamlining Bookings & Secure Payments (Milestone 3 & 4: Lesson Booking & Student Payment Processing, Lesson Coordination & Tutor Payouts)**
+### **Phase 3: Streamlining Bookings & Secure Payments (Milestone 3 & 4: Lesson Booking & Client Payment Processing, Lesson Coordination & Expert Payouts)**
 
-*   **Problem:** Manual booking processes, insecure payment handling, and complex tutor payout management.
-*   **Solution:** A streamlined lesson booking flow was implemented, incorporating tutor availability management. For secure financial transactions, we integrated **Stripe Connect**, enabling students to make payments directly and allowing tutors to securely onboard their bank accounts for automated payouts. Meeting details (links, IDs, passwords) could be input by tutors and were automatically sent to the student's chat. Tutors gained the ability to manually mark lessons as "Completed," triggering automated payouts with a 10% platform commission deduction. A basic booking history dashboard provided transparency for both students and tutors.
+*   **Problem:** Manual booking processes, insecure payment handling, and complex expert payout management.
+*   **Solution:** A streamlined lesson booking flow was implemented, incorporating expert availability management. For secure financial transactions, we integrated **Stripe Connect**, enabling clients to make payments directly and allowing experts to securely onboard their bank accounts for automated payouts. Meeting details (links, IDs, passwords) could be input by experts and were automatically sent to the client's chat. Experts gained the ability to manually mark lessons as "Completed," triggering automated payouts with a 10% platform commission deduction. A basic booking history dashboard provided transparency for both clients and experts.
 
-### **Phase 4: Implementing Sustainable Revenue (Milestone 5: Automated Tiered Monthly Fee for Tutors)**
+### **Phase 4: Implementing Sustainable Revenue (Milestone 5: Automated Tiered Monthly Fee for Experts)**
 
 *   **Problem:** Establishing a consistent and fair recurring revenue model.
-*   **Solution:** A system was developed to accurately track monthly *paid and completed* bookings for each tutor. This data powered a **tiered monthly fee logic** (e.g., 0-5 bookings = £0; 6-10 bookings = £X; 11+ bookings = £Y), which was then automated via Stripe for recurring billing at the end of each month. This ensured a predictable revenue stream while incentivizing tutor activity, with tutors receiving notifications regarding their fee tier and charges.
+*   **Solution:** A system was developed to accurately track monthly *paid and completed* bookings for each expert. This data powered a **tiered monthly fee logic** (e.g., 0-5 bookings = £0; 6-10 bookings = £X; 11+ bookings = £Y), which was then automated via Stripe for recurring billing at the end of each month. This ensured a predictable revenue stream while incentivizing expert activity, with experts receiving notifications regarding their fee tier and charges.
 
-### **Phase 5: Building Trust & Social Proof (Milestone 6: Basic Tutor Reviews & Ratings)**
+### **Phase 5: Building Trust & Social Proof (Milestone 6: Basic Expert Reviews & Ratings)**
 
-*   **Problem:** Students lacked a reliable mechanism to evaluate tutor quality and build trust.
-*   **Solution:** We implemented a comprehensive review and rating system. Students could leave star ratings (1-5) and short written reviews for tutors *after* a lesson was marked "Completed." These reviews are prominently displayed on the tutor's public profile, along with an automatically calculated average star rating, significantly enhancing tutor credibility and aiding student decision-making.
+*   **Problem:** Clients lacked a reliable mechanism to evaluate expert quality and build trust.
+*   **Solution:** We implemented a comprehensive review and rating system. Clients could leave star ratings (1-5) and short written reviews for experts *after* a lesson was marked "Completed." These reviews are prominently displayed on the expert's public profile, along with an automatically calculated average star rating, significantly enhancing expert credibility and aiding client decision-making.
 
 ## Addressing Specific Challenges & Continuous Refinements
 
@@ -107,10 +107,10 @@ Throughout the development lifecycle, we engaged in continuous problem discovery
 *   **Session Cancellation & Refunds:** A "Cancel Session" button was introduced with a robust backend process. While initially handled manually by emailing `info@brighthumans.com` for refund processing, the system was designed to include a `refunded_money` boolean attribute. A secure, expiring hash link is generated in the email to automatically update this status in the database, ensuring that the holding amount for a session remains in place and is not credited to the expert if cancelled before the meeting start. Confirmation messages notify users about the refund processing status.
 *   **User Experience Streamlining:**
     *   The "chat send" button was dynamically controlled, greying out when no message was present.
-    *   The tutor's hourly rate was relocated to the prominent "overview" section for improved visibility.
+    *   The expert's hourly rate was relocated to the prominent "overview" section for improved visibility.
     *   The complexity of "client profile customization" was removed to simplify the user journey.
-    *   The concept of multiple subjects was streamlined to "one hourly rate" for tutors, simplifying their offerings.
-    *   All elements of the expert (tutor) profile customization were consolidated into a single, intuitive interface.
+    *   The concept of multiple subjects was streamlined to "one hourly rate" for experts, simplifying their offerings.
+    *   All elements of the expert profile customization were consolidated into a single, intuitive interface.
     *   Minor yet impactful fixes included making the camera icon clickable for profile picture uploads, making the experience section optional, defaulting English as an added language, and resolving "NaN" error messages for default hourly rates.
     *   The "preferred platform selection" was removed for simplicity.
     *   "Book meeting right away" was concisely changed to "Book Now," with input retention upon back navigation.
@@ -118,11 +118,11 @@ Throughout the development lifecycle, we engaged in continuous problem discovery
 *   **Real-time Communication & Conflict Prevention:**
     *   A streamlined "book flow" was developed where both booking and chat actions trigger initial messages.
     *   Server-Sent Events (SSE) were implemented to enable real-time refetches and notifications for both recipients upon event triggers, ensuring immediate communication updates.
-    *   A critical feature was added to prevent double-bookings: the system now checks for existing tutor meetings at the proposed time and notifies both student and tutor of any conflict.
+    *   A critical feature was added to prevent double-bookings: the system now checks for existing expert meetings at the proposed time and notifies both client and expert of any conflict.
     *   A comprehensive notification system was developed to keep users informed about important updates.
 *   **Post-Lesson Functionality & Reporting:**
-    *   A functional "report" button for students was integrated, displaying reported messages on the `/lesson` page for administrative review.
-    *   Tutor earnings are now automatically updated each time a session's status becomes "COMPLETED."
+    *   A functional "report" button for clients was integrated, displaying reported messages on the `/lesson` page for administrative review.
+    *   Expert earnings are now automatically updated each time a session's status becomes "COMPLETED."
     *   The "in-person" or platform selection was removed from meeting information to simplify the process.
 
 ## Robust Architecture & Security
