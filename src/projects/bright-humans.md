@@ -15,30 +15,30 @@ company: Bright Humans
 ---
 
 Bright Humans is a state-of-the-art online tutoring platform established in 2025, designed to
-revolutionize the way students connect with private tutors. The platform facilitates both online and
+revolutionize the way clients connect with private experts. The platform facilitates both online and
 in-person sessions across an expansive range of subjects, from academic disciplines like mathematics and
 languages to creative arts, cooking, music, professional development, and sports. It streamlines the
-entire tutoring process, from discovering expert tutors and seamless communication to booking sessions,
-secure payment processing, and a structured compensation model for tutors based on bookings and monthly
+entire tutoring process, from discovering expert experts and seamless communication to booking sessions,
+secure payment processing, and a structured compensation model for experts based on bookings and monthly
 fees.
 
 ## Project Goal
 
 The primary objective was to build a comprehensive, user-centric platform that efficiently connects
-clients with qualified expert tutors. This involves creating intuitive search and communication tools, a
+clients with qualified expert experts. This involves creating intuitive search and communication tools, a
 robust booking system, and a secure payment infrastructure. A key goal was to offer a diverse subject
 catalog, ensuring accessibility for a wide array of learning needs, while also implementing a
-sustainable financial model that supports tutors through commissions and tiered fees.
+sustainable financial model that supports experts through commissions and tiered fees.
 
 ## Key Challenges
 
 Developing Bright Humans involved navigating several complex challenges:
 -   **Dynamic Search and Matching**: Implementing an intelligent search and filtering system to
-effectively match clients with the most suitable expert tutors based on subjects, availability, and
+effectively match clients with the most suitable expert experts based on subjects, availability, and
 preferences.
 -   **Secure and Flexible Payment System**: Designing and integrating a robust payment gateway (Stripe)
 to handle secure transactions, manage commissions for the platform, and implement a tiered monthly fee
-structure for tutors.
+structure for experts.
 -   **Real-time Communication and Scheduling**: Developing a reliable real-time messaging system and a
 flexible session booking and availability management system to ensure smooth coordination between
 clients and experts.
