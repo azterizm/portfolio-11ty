@@ -5,6 +5,30 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>{{ metadata.title }}</title>
+  <meta name="description" content="{{ metadata.description }}">
+  <meta name="keywords" content="{{ metadata.keywords }}">
+  <meta name="author" content="{{ metadata.author.name }}">
+  <link rel="canonical" href="{{ metadata.url }}{{ page.url | url }}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ metadata.url }}{{ page.url | url }}">
+  <meta property="og:title" content="{{ metadata.title }}">
+  <meta property="og:description" content="{{ metadata.description }}">
+  <meta property="og:image" content="{{ metadata.url }}/assets/profile.webp">
+  <meta property="og:image:alt" content="Profile picture of Abdullah Memon">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ metadata.url }}{{ page.url | url }}">
+  <meta property="twitter:title" content="{{ metadata.title }}">
+  <meta property="twitter:description" content="{{ metadata.description }}">
+  <meta property="twitter:image" content="{{ metadata.url }}/assets/profile.webp">
+  <meta name="twitter:image:alt" content="Profile picture of Abdullah Memon">
+
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="stylesheet" href="/css/fonts.css" />
   <link rel="stylesheet" href="/css/global.css" />
@@ -14,7 +38,6 @@
   <link rel="stylesheet" href="/css/nav.css" />
   <link rel="stylesheet" href="/css/scroll-to-top.css" />
   <link rel="stylesheet" href="/tailwind.css" />
-  <title>Abdullah Memon Portfolio Website</title>
 </head>
 
 <body>

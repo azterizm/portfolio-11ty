@@ -5,6 +5,31 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>{{ title }} | Project by {{ metadata.author.name }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="keywords" content="{{ title }}, {{ technologies | join(', ') }}, {{ metadata.author.name }}, Portfolio Project">
+  <meta name="author" content="{{ metadata.author.name }}">
+  <link rel="canonical" href="{{ metadata.url }}{{ page.url | url }}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ metadata.url }}{{ page.url | url }}">
+  <meta property="og:title" content="{{ title }} | Project by {{ metadata.author.name }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ metadata.url }}{{ main_image }}">
+  <meta property="og:image:alt" content="Main image for the {{ title }} project">
+  <meta property="article:author" content="{{ metadata.author.name }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ metadata.url }}{{ page.url | url }}">
+  <meta property="twitter:title" content="{{ title }} | Project by {{ metadata.author.name }}">
+  <meta property="twitter:description" content="{{ description }}">
+  <meta property="twitter:image" content="{{ metadata.url }}{{ main_image }}">
+  <meta name="twitter:image:alt" content="Main image for the {{ title }} project">
+
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="stylesheet" href="/css/fonts.css" />
   <link rel="stylesheet" href="/css/global.css" />
@@ -12,7 +37,6 @@
   <link rel="stylesheet" href="/css/transition.css" />
   <link rel="stylesheet" href="/css/scroll-to-top.css" />
   <link rel="stylesheet" href="/tailwind.css" />
-  <title>{{title}} project | Abdullah Memon Portfolio Website</title>
 </head>
 
 <body>
