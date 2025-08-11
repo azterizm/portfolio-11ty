@@ -4,7 +4,7 @@ title: Ssup Store
 website: https://ssup.store/
 description: "A modern e-commerce website featuring funny merch for individuals that want to speak from their heart."
 logo: "/assets/logos/ssup.png"
-main_image: "/assets/screenshots/ssup_store/screenshot1.png"
+main_image: "/assets/screenshots/ssup_store/screenshot1.webp"
 technologies: [ "MongoDB", "PayloadCMS", "ExpressJS", "StripeJS", "GSAP", "RemixJS", "TailwindCSS", "i18next", "SharpJS", "Redis", "ChartJS" ]
 year: 2024
 roles: ["Full stack developer", "Researcher", "UI/UX designer"]
@@ -18,7 +18,7 @@ Remember when shopping for funny t-shirts was as exciting as watching paint dry?
 
 What makes it special? It's fully automated with Printful integration, meaning new designs magically appear on the store without human intervention (yes, we're living in the future!). The admin just needs to upload designs to Printful, and our system takes care of the rest – like a well-trained butler, but digital.
 
-![Home sweet home](/assets/screenshots/ssup_store/screenshot1.png)
+![Home sweet home](/assets/screenshots/ssup_store/screenshot1.webp)
 Our design philosophy? Make it fun, make it pop! With micro-interactions and thoughtful animations sprinkled throughout, shopping here is like playing with your favorite toy – but you get cool merch instead of just empty pockets.
 
 ## Features That Make Us Unique
@@ -29,7 +29,7 @@ Meet your new shopping buddy – our chatbot! Unlike your friend who leaves you 
 ![Finding your style made easy](/assets/screenshots/ssup_store/screenshot3.png)
 Lost in the sauce? Our collections and categories will guide you like a fashion GPS. Whether you're looking for something specific or just browsing, we've got your back.
 
-![Product details that actually matter](/assets/screenshots/ssup_store/screenshot4.png)
+![Product details that actually matter](/assets/screenshots/ssup_store/screenshot4.webp)
 Each product page is a masterclass in clarity. From size guides to material specs, we've included everything you need to know (except maybe your future).
 
 ![Cart that cares](/assets/screenshots/ssup_store/screenshot5.png)

@@ -3,7 +3,7 @@ layout: layouts/project.njk
 title: Zed Clothing
 description: "Business-grade elegance for the modern, handsome professional."
 logo: "/assets/logos/zed_clothing.svg"
-main_image: "/assets/screenshots/zed_clothing/1722614753.png"
+main_image: "/assets/screenshots/zed_clothing/1722614753.webp"
 technologies: ["RemixJS", "PrismaJS (MySQL)", "Framer Motion", "TailwindCSS", "Zod", "Redis", "Playwright"]
 year: 2024
 roles: ["Full stack developer", "UI/UX designer", "Researcher"]
@@ -14,24 +14,24 @@ The Zed Clothing project was an ambitious and rewarding venture aimed at breakin
 
 The Zed Clothing site embodies minimalist, Swiss-style design principles, with an interface that’s both sleek and fully responsive. Smooth transitions and subtle line animations make navigation intuitive and visually engaging.
 
-![Screenshot 1](/assets/screenshots/zed_clothing/1722614753.png)  
+![Screenshot 1](/assets/screenshots/zed_clothing/1722614753.webp)  
 At the site’s entrance, users are greeted by a slow transition that reveals the brand name and purpose, bringing nearby elements to life. This design choice creates a lasting emotional impression, setting the tone for a memorable shopping journey.
 
 
 ### **Catalog Navigation**  
-  ![Screenshot 2](/assets/screenshots/zed_clothing/1722614764.png)  
+  ![Screenshot 2](/assets/screenshots/zed_clothing/1722614764.webp)  
   The catalog is streamlined to include only relevant items and contextual buttons, adapting dynamically to each user’s shopping situation. The layout and options guide users seamlessly, making product selection intuitive and enhancing confidence throughout the experience.
 
 ### **Unique Product Pages**  
-  ![Screenshot 3](/assets/screenshots/zed_clothing/1722614792.png)  
+  ![Screenshot 3](/assets/screenshots/zed_clothing/1722614792.webp)  
   Each product page is automatically styled to reflect the unique essence of each item, with animations that naturally unfold as users interact. This dynamic styling creates a personalized, immersive experience tailored to the product's character, making each page feel unique while maintaining a cohesive look throughout the platform.
 
 ### **Responsive UI Elements**  
-  ![Screenshot 4](/assets/screenshots/zed_clothing/1722614840.png)  
+  ![Screenshot 4](/assets/screenshots/zed_clothing/1722614840.webp)  
   Every UI element adheres to Zed Clothing's design guidelines, ensuring a cohesive look across all devices. Variant options are clearly presented and easy to select, giving users complete control without sacrificing clarity.
 
 ### **Context-Preserving Slide Panels**  
-  ![Screenshot 5](/assets/screenshots/zed_clothing/1722614852.png)  
+  ![Screenshot 5](/assets/screenshots/zed_clothing/1722614852.webp)  
   Slide panels allow users to interact with additional information without losing context, enriching the shopping experience while maintaining full focus on the selected items.
 
 ---
