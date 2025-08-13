@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: "Blog - My Portfolio"
+description: "A collection of articles and thoughts on web development, design, and more."
+permalink: /blog/index.html
+---
+
+<div class="py-16">
+  <h1 class="text-5xl font-bold">My Blog</h1>
+  <p class="text-xl mt-2 text-gray-700">A collection of articles on web development, design, and technology.</p>
+</div>
+
+<div class="grid gap-12">
+  {%- for post in collections.blog -%}
+    <a href="{{ post.url | url }}" class="block p-8 border border-black rounded-lg hover:bg-gray-50 transition-colors">
+      <h2 class="text-3xl font-bold">{{ post.data.title }}</h2>
+      <p class="text-gray-500 mt-2">{{ post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</p>
+      <p class="mt-4 text-lg text-gray-800">{{ post.data.description }}</p>
+    </a>
+  {%- endfor -%}
+</div>
