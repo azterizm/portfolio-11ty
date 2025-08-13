@@ -1,4 +1,3 @@
-
 const sliderContainer = document.querySelector('#testimonials');
 const testimonials = document.querySelectorAll('.testimonial');
 const counter = document.querySelector('#testimonial-counter');
@@ -58,3 +57,6 @@ async function slideTestimonial(direction) {
 
 prevButton.addEventListener('click', () => slideTestimonial('prev'));
 nextButton.addEventListener('click', () => slideTestimonial('next'));
+
+
+
