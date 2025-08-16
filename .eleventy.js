@@ -35,6 +35,22 @@ export default function(config) {
     return collection.getFilteredByGlob('src/testimonials/*.md');
   });
 
+  // New collection to get all unique tags from blog posts
+  config.addCollection('tagList', function(collectionApi) {
+    const tags = new Set();
+    collectionApi.getFilteredByGlob('src/blog/*.md').forEach(item => {
+      if (item.data.tags) {
+        item.data.tags.forEach(tag => {
+          // Exclude the 'post' tag if it's just a general category for all blog posts
+          if (tag !== 'post') {
+            tags.add(tag);
+          }
+        });
+      }
+    });
+    return Array.from(tags).sort((a, b) => a.localeCompare(b));
+  });
+
   return {
     dir: {
       input: 'src'

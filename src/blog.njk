@@ -68,7 +68,7 @@ permalink: /blog/index.html
         A collection of articles on web development, design, and technology insights.
         </p>
 
-        <!-- New Newsletter Component for Blog Page -->
+        <!-- Newsletter Component for Blog Page -->
         <div class="newsletter-component mt-10 max-w-md mx-auto text-center">
           <button id="blog-subscribe-button" class="px-8 py-4 bg-black text-white rounded-full text-xl font-semibold hover:scale-105 transition-transform inline-flex items-center justify-center">
             Subscribe to Email List
@@ -86,6 +86,18 @@ permalink: /blog/index.html
               <p class="text-xl font-semibold text-primary mb-4">Thank you for subscribing!</p>
               <button data-newsletter-reset-btn class="px-4 py-2 rounded-full bg-black text-white hover:bg-primary hover:text-white transition-colors duration-300">Subscribe again</button>
             </div>
+          </div>
+        </div>
+
+        <!-- New Tag Cloud Section -->
+        <div class="mt-12 text-center">
+          <h3 class="text-2xl font-bold text-black mb-6">Explore Topics</h3>
+          <div class="flex flex-wrap justify-center gap-3">
+            {% for tag in collections.tagList %}
+            <a href="/tag/{{ tag | slug }}/" class="px-5 py-2 rounded-full bg-background text-black text-lg font-medium hover:bg-primary hover:text-white transition-colors duration-300 border-2 border-transparent hover:border-primary">
+              #{{ tag }}
+            </a>
+            {% endfor %}
           </div>
         </div>
       </div>
