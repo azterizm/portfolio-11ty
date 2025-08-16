@@ -1,3 +1,10 @@
+---
+layout: layouts/post.njk
+title: "The Best Freelancing Feature Prioritisation Strategy as Software Developer - Client Satisfied!"
+description: "Learn effective feature prioritization models like MoSCoW, Value vs. Effort, and Kano to keep clients satisfied and optimize development time."
+date: "2025-07-10"
+tags: ["freelancing", "feature prioritization", "project management", "client satisfaction", "software development"]
+---
 In this article, I will share how I prioritise features when developing software for freelancing. This is important when doing client's work. That is to develop the features that client want to see the most first to keep them intrigued in the process and not feel like the project is taking so much time.
 
 If you do feature prioritisation effectively, you will be able to utilise more time to develop in the project. When things are looking to be going well, it's natural to give it more time so that other things turn out well like this. If things don't go well as your feature prioritisation was poor, no matter your work is good, it wouldn't seem like you are doing anything to a non-technical person. Learn how to communicate with work in hand. 

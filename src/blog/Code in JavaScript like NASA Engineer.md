@@ -1,3 +1,10 @@
+---
+layout: layouts/post.njk
+title: "Code in JavaScript like a NASA Engineer"
+description: "Explore coding guidelines inspired by NASA to write safe, reliable, and maintainable JavaScript/TypeScript code for real-world applications."
+date: "2025-06-03"
+tags: ["javascript", "typescript", "coding standards", "software engineering", "best practices"]
+---
 We have all been there where we regretted not following the coding standard and become too flexible when coding a program. Using singleton pattern in one side and classes on the other, no don't quite remember if this function should contain "new" or not. This is result of bad code and having no system at all.
 
 You introduced Typescript and decided to keep things simple like only using functions (functional programming), adding explicit types everywhere, adding return type, using more types and avoiding "any" wherever possible. Is that enough for reliable systems? Is it enough that you are confident where things are when introducing a new feature? Maybe not. We need a way to make our lives easier. 

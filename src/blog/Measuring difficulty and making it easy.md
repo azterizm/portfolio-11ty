@@ -1,3 +1,10 @@
+---
+layout: layouts/post.njk
+title: "Measuring Difficulty and Making It Easy"
+description: "Understand how to measure task difficulty based on success chance and actions, and strategies to reduce it through exploration and consistent effort."
+date: "2025-08-28"
+tags: ["productivity", "problem solving", "learning", "self-improvement"]
+---
 Is it by measuring chance of success or number of actions involved?
 
 It is easy to drink water than it is to arrange water where pipeline is not registered by the authorities. 

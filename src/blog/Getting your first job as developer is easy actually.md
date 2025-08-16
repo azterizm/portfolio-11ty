@@ -1,3 +1,10 @@
+---
+layout: layouts/post.njk
+title: "Getting Your First Job as a Developer is Easy, Actually"
+description: "A practical guide for aspiring developers on how to land their first job, build a portfolio, and establish long-term client relationships in freelancing."
+date: "2025-08-05"
+tags: ["career", "developer", "freelancing", "job search", "portfolio"]
+---
 We live in times of saturated market. There are no jobs around. You have to go to places and “ask” for work. Unlike old times, people would call you asking to update their website to a better version. Things were better at that time where getting jobs were much easier and everyone could earn comfortably, right? Well no.
 
 Let me tell you how you can get your first job. We are not talking about simple first job and go home for years. We are talking long term and reliable way where you can make meaningful money consistently. 
@@ -55,7 +62,7 @@ It's great that you got the first job. It's not great, too little money like not
 
 You will now be able to charge more and more money gradually as you are getting projects from him. Little at the start and more per project. Do not make him feel like that. If you do, you will regarded as greedy. Understand how things will turn out after such decisions then proceed. Construct the image you want the client to see of yourself in their mind. Remember, what is shown counts. What is not shown does not count.
 
-Now let me give you a strategy that will guarantee consistent income from a client. Most clients tend to ask for corrections after a project is done. These corrections are outside what was agreed upon before. Now, you may do them for free for a few which is good as you are making a relationship. But now you have to make a deal with him. Ask for monthly salary to maintain the project or if a fixed number of corrections are done then one payment for them. 
+Now let me give a strategy that will guarantee consistent income from a client. Most clients tend to ask for corrections after a project is done. These corrections are outside what was agreed upon before. Now, you may do them for free for a few which is good as you are making a relationship. But now you have to make a deal with him. Ask for monthly salary to maintain the project or if a fixed number of corrections are done then one payment for them. 
 
 Here you will earn from work and maintenance. 
 
