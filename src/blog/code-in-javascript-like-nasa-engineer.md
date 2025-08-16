@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "Code in JavaScript like a NASA Engineer"
 description: "Explore coding guidelines inspired by NASA to write safe, reliable, and maintainable JavaScript/TypeScript code for real-world applications."
 date: "2025-06-03"
-tags: ["javascript", "typescript", "coding standards", "software engineering", "best practices"]
+tags: ["javascript", "typescript", "coding-standards", "software-engineering", "best-practices"]
 ---
 We have all been there where we regretted not following the coding standard and become too flexible when coding a program. Using singleton pattern in one side and classes on the other, no don't quite remember if this function should contain "new" or not. This is result of bad code and having no system at all.
 

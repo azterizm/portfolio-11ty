@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "Getting Your First Job as a Developer is Easy, Actually"
 description: "A practical guide for aspiring developers on how to land their first job, build a portfolio, and establish long-term client relationships in freelancing."
 date: "2025-08-05"
-tags: ["career", "developer", "freelancing", "job search", "portfolio"]
+tags: ["career", "developer", "freelancing", "job-search", "portfolio"]
 ---
 We live in times of saturated market. There are no jobs around. You have to go to places and “ask” for work. Unlike old times, people would call you asking to update their website to a better version. Things were better at that time where getting jobs were much easier and everyone could earn comfortably, right? Well no.
 

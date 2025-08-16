@@ -75,7 +75,7 @@ layout: layouts/base.njk
               <span class="text-xs bg-background px-2 py-1 rounded text-black">{{ tag }}</span>
               {%- endfor -%}
               {%- if post.data.tags.length > 2 -%}
-              <span class="text-xs text-primary">+{{ post.data.tags.length - 2 }} more</span>
+              <span class="mt-1 text-xs text-primary">+{{ post.data.tags.length - 2 }} more</span>
               {%- endif -%}
             </div>
             {%- endif -%}
@@ -104,7 +104,7 @@ layout: layouts/base.njk
 
 
 
-<div class='!-mb-[6.5rem] !mt-0'>
+<div class='!-mb-[6.5rem] !mt-16'>
   <div class="mb-8 bg-black h-[1px]"></div>
   <div class="flex items-center justify-center md:justify-between mx-auto w-full flex-col md:flex-row">
     <p class="text-center md:text-left flex-1 text-2xl font-bold text-black leading-relaxed w-full">Subscribe for new articles.</p>

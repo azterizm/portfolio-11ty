@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "The Best Freelancing Software Development Strategy - Client Satisfied!"
 description: "A comprehensive blueprint for freelance software development, covering system design, technology selection, MVP, and iterative enhancements."
 date: "2025-07-20"
-tags: ["freelancing", "software development", "strategy", "project management", "MVP"]
+tags: ["freelancing", "software-development", "strategy", "project-management", "MVP"]
 ---
 Here I provide my development strategy or blueprint. It is general which means, I don't handpick exact technologies for you. This way, you would be able to select your own stack. Your stack that you are most comfortable with is better than the stack that everyone uses. 
 
