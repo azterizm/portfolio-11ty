@@ -1,8 +1,7 @@
 /* src/css/blog.css */
 
 .blog-card {
-  opacity: 0;
-  transform: translateY(30px);
+  /* Removed: opacity: 0; and transform: translateY(30px); to make posts visible by default */
 }
 
 .blog-card.aos-animate {
