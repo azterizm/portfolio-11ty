@@ -21,6 +21,15 @@ export default function(config) {
     return arr.slice(start, end);
   });
 
+  // New custom filter to filter posts by tag
+  config.addFilter("filterByTag", (posts, tag) => {
+    if (!Array.isArray(posts)) {
+      console.warn("filterByTag filter applied to non-array:", posts);
+      return [];
+    }
+    return posts.filter(post => post.data.tags && post.data.tags.includes(tag));
+  });
+
   config.addCollection('projects', (collection) => {
     return collection.getFilteredByGlob('src/projects/*.md').sort((a, b) => {
       return new Date(b.data.year) - new Date(a.data.year);
@@ -41,7 +50,6 @@ export default function(config) {
     collectionApi.getFilteredByGlob('src/blog/*.md').forEach(item => {
       if (item.data.tags) {
         item.data.tags.forEach(tag => {
-          // Removed the exclusion for 'post' tag
           tags.add(tag);
         });
       }

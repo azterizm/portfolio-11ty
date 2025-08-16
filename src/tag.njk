@@ -1,0 +1,147 @@
+---
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+permalink: /tag/{{ tag | slug }}/index.html
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Azterizm | Tag: {{ tag }}</title>
+  <meta name="description" content="Articles tagged with {{ tag }} on Azterizm's blog.">
+  <meta name="keywords" content="{{ metadata.keywords }}, {{ tag }}">
+  <meta name="author" content="{{ metadata.author.name }}">
+  <link rel="canonical" href="{{ metadata.url }}{{ page.url | url }}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ metadata.url }}{{ page.url | url }}">
+  <meta property="og:title" content="Azterizm | Tag: {{ tag }}">
+  <meta property="og:description" content="Articles tagged with {{ tag }} on Azterizm's blog.">
+  <meta property="og:image" content="{{ metadata.url }}/assets/profile.webp">
+  <meta property="og:image:alt" content="Profile picture of Abdullah Memon">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ metadata.url }}{{ page.url | url }}">
+  <meta property="twitter:title" content="Azterizm | Tag: {{ tag }}">
+  <meta property="twitter:description" content="Articles tagged with {{ tag }} on Azterizm's blog.">
+  <meta property="twitter:image" content="{{ metadata.url }}/assets/profile.webp">
+  <meta name="twitter:image:alt" content="Profile picture of Abdullah Memon">
+
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/css/fonts.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/about.css" />
+  <link rel="stylesheet" href="/css/animate.css" />
+  <link rel="stylesheet" href="/css/services.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/scroll-to-top.css" />
+  <link rel="stylesheet" href="/tailwind.css" />
+  <link rel="stylesheet" href="/css/blog.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <div class="container mx-auto px-4">
+    {% include "components/navbar.njk" %}
+
+    <div class="py-20">
+      <div class="text-center mb-16">
+        <a href="/blog/" class="inline-flex items-center text-primary font-semibold mb-8 group">
+          <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Back to Blog
+        </a>
+        <h1 class="text-6xl md:text-7xl font-bold mb-6 text-animate" style="line-height:1.25;letter-spacing: -10px;">
+          <span style="--delay: 0.1s; --top: 100px;">#</span>
+          {% for char in tag %}
+            <span style="--delay: {{ 0.15 + loop.index0 * 0.05 }}s; --top: 100px;">{{ char }}</span>
+          {% endfor %}
+        </h1>
+        <p class="text-xl md:text-2xl text-black max-w-2xl mx-auto leading-relaxed">
+          A collection of articles tagged with "{{ tag }}".
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="grid gap-8 md:gap-12">
+        {%- set taggedPosts = collections.blog | filterByTag(tag) -%}
+        {%- for post in taggedPosts -%}
+        <article class="blog-card group cursor-pointer" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+          <a href="{{ post.url | url }}" class="block">
+            <div class="relative overflow-hidden rounded-2xl border-2 border-black bg-pure-white p-8 md:p-10 transition-all duration-500 hover:border-primary hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-2">
+
+              <!-- Date Badge -->
+              <div class="absolute top-6 right-6 bg-gradient-to-r from-primary to-primary-light text-white px-4 py-2 rounded-full text-sm font-medium">
+                {{ post.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) }}
+              </div>
+
+              <!-- Content -->
+              <div class="pr-20">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black group-hover:text-primary transition-colors duration-300">
+                  {{ post.data.title }}
+                </h2>
+
+                <p class="text-lg md:text-xl text-black leading-relaxed mb-6">
+                {{ post.data.description }}
+                </p>
+                {%- if post.data.tags -%}
+                <div class="flex flex-wrap gap-2 mb-6">
+                  {%- for postTag in post.data.tags -%}
+                  <span class="text-sm bg-background px-2 py-1 rounded">{{ postTag }}</span>
+                  {%- endfor -%}
+                </div>
+                {%- endif -%}
+
+                <!-- Read More Link -->
+                <div class="flex items-center text-primary font-semibold group-hover:text-primary transition-colors duration-300">
+                  <span class="mr-2">Read Article</span>
+                  <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Decorative Elements -->
+              <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute -top-2 -left-2 w-16 h-16 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+          </a>
+        </article>
+        {%- endfor -%}
+      </div>
+
+      <!-- Empty State for Tag Page -->
+      {%- if taggedPosts.length == 0 -%}
+      <div class="text-center py-20">
+        <div class="w-24 h-24 mx-auto mb-6 bg-background rounded-full flex items-center justify-center">
+          <svg class="w-12 h-12 text-black/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-black mb-2">No posts with this tag yet</h3>
+        <p class="text-black">Check back soon for new articles!</p>
+      </div>
+      {%- endif -%}
+    </div>
+
+    {% include "components/footer.njk" %}
+  </div>
+
+  <script src="/assets/scripts/blog-animations.js"></script>
+  <script src="/assets/scripts/setup-newsletter.js"></script>
+</body>
+
+</html>
