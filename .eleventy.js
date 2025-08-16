@@ -22,7 +22,7 @@ export default function(config) {
   });
 
   // New custom filter to filter posts by tag
-  config.addFilter("filterByTag", (posts, tag) => {
+  config.addNunjucksFilter("filterByTag", (posts, tag) => {
     if (!Array.isArray(posts)) {
       console.warn("filterByTag filter applied to non-array:", posts);
       return [];
@@ -31,7 +31,7 @@ export default function(config) {
   });
 
   // New custom filter to shuffle an array randomly
-  config.addFilter("shuffle", (arr) => {
+  config.addNunjucksFilter("shuffle", (arr) => {
     if (!Array.isArray(arr)) {
       console.warn("Shuffle filter applied to non-array:", arr);
       return arr;
@@ -45,7 +45,7 @@ export default function(config) {
   });
 
   // New custom filter to get related posts based on common tags, excluding current post, shuffled and limited
-  config.addFilter("getRelatedPosts", (allPosts, currentTags, currentUrl, limit = 3) => {
+  config.addNunjucksFilter("getRelatedPosts", (allPosts, currentTags, currentUrl, limit = 3) => {
     if (!Array.isArray(allPosts) || !Array.isArray(currentTags)) {
       console.warn("getRelatedPosts filter received invalid input.");
       return [];
