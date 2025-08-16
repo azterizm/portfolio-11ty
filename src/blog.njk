@@ -144,14 +144,14 @@ permalink: "/blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumbe
           <a href="{{ pagination.href.previous }}" class="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-indigo-100 transition">Previous</a>
         </li>
         {% endif %}
-        {% for idx in pagination.pages | range %}
+        {%- for idx in (0..(pagination.pages.length - 1)) -%}
         <li>
           <a href="{{ pagination.hrefs[idx] }}"
             class="px-4 py-2 rounded {{ pagination.pageNumber == idx ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-indigo-100 transition' }}">
             {{ idx + 1 }}
           </a>
         </li>
-        {% endfor %}
+        {%- endfor -%}
         {% if pagination.href.next %}
         <li>
           <a href="{{ pagination.href.next }}" class="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-indigo-100 transition">Next</a>
