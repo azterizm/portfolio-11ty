@@ -10,7 +10,8 @@ module.exports = {
         white: '#F3F3FF',
         black: '#000040',
         'pure-white': '#ffffff',
-        'pure-black': '#000000'
+        'pure-black': '#000000',
+        'primary-light': '#3333FF'
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
