@@ -68,13 +68,13 @@
         </a>
       </article>
       {%- endfor -%}
-<div class="flex items-center justify-between max-w-4xl mx-auto w-full border-y-2 border-black py-8">
-    <p class="flex-1 text-2xl font-bold text-black leading-relaxed w-full">Subscribe for new articles.</p>
-    <div class="flex items-center justify-center gap-4 mt-2 ">
-      <input type="text" class='px-4 py-2 rounded-full border-2 border-black bg-background min-w-[20rem]' placeholder='person@example.com'/>
-      <button class='px-4 py-2 rounded-full bg-black text-white'>Submit</button>
-    </div>
-    </div>
+      <div class="flex items-center justify-between max-w-4xl mx-auto w-full border-y-2 border-black py-8">
+        <p class="flex-1 text-2xl font-bold text-black leading-relaxed w-full">Subscribe for new articles.</p>
+        <form action='https://formspree.io/f/xnnzrery' method='post' class="flex items-center justify-center gap-4 mt-2 ">
+          <input type="text" class='px-4 py-2 rounded-full border-2 border-black bg-background min-w-[20rem]' placeholder='person@example.com' name='email'/>
+          <button class='px-4 py-2 rounded-full bg-black text-white'>Submit</button>
+        </form>
+      </div>
     </div>
 
     <div class="text-center mt-16">
