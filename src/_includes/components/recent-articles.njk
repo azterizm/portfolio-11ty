@@ -1,6 +1,6 @@
 <div id="recent-articles" class="py-20">
   <div class="text-center mb-16">
-    <h2 class="text-6xl md:text-7xl font-bold mb-6 text-animate-recent" style="line-height:1.25;letter-spacing: -8px;">
+    <h2 class="text-6xl md:text-7xl font-bold mb-6 text-animate-recent" style="line-height:1.25;letter-spacing: -10px;">
       <span style="--delay: 0.1s; --top: 100px;">R</span>
       <span style="--delay: 0.15s; --top: 100px;">e</span>
       <span style="--delay: 0.2s; --top: 100px;">c</span>
@@ -20,6 +20,7 @@
     <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
       Stay updated with my latest thoughts and insights on development, design, and philosophy.
     </p>
+    
   </div>
 
   <div class="max-w-4xl mx-auto">
@@ -67,6 +68,13 @@
         </a>
       </article>
       {%- endfor -%}
+<div class="flex items-center justify-between max-w-4xl mx-auto w-full border-y-2 border-black py-8">
+    <p class="flex-1 text-2xl font-bold text-gray-600 leading-relaxed w-full">Subscribe for new articles.</p>
+    <div class="flex items-center justify-center gap-4 mt-2 ">
+      <input type="text" class='px-4 py-2 rounded-full border-2 border-black bg-background min-w-[20rem]' placeholder='person@example.com'/>
+      <button class='px-4 py-2 rounded-full bg-black text-white'>Submit</button>
+    </div>
+    </div>
     </div>
 
     <div class="text-center mt-16">
