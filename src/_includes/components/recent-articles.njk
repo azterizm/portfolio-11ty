@@ -23,6 +23,8 @@
   </div>
 
   <div class="max-w-4xl mx-auto">
+    {# DEBUG: Displaying the number of blog posts found for this section #}
+    <p class="text-center text-sm text-red-500 mb-4">Debug: Blog posts found: {{ collections.blog.length }}</p>
     <div class="grid gap-8 md:gap-12">
       {%- for post in collections.blog | slice(0, 3) -%} {# Get latest 3 posts #}
       <article class="blog-card group cursor-pointer recent-article-item">
