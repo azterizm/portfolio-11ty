@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  if (location.pathname!=='/')return
   const eyeBall = document.getElementById('eye-ball');
   const eye = eyeBall.parentElement;
   document.addEventListener('mousemove', (e) => {
