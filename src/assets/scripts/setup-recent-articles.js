@@ -53,6 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Animation for the newsletter subscription section
+  const newsletterSection = document.querySelector('.newsletter-section');
+  if (newsletterSection) {
+    gsap.from(newsletterSection, {
+      opacity: 0,
+      y: 50, // Similar to article cards
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: newsletterSection,
+        start: 'top 85%', // Trigger when it comes into view
+        toggleActions: 'play none none none',
+      },
+    });
+  }
+
   // Animation for the "See All Articles" button
   const seeAllButton = document.querySelector('#recent-articles a.px-8.py-4');
   if (seeAllButton) {
