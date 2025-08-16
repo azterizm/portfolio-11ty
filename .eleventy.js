@@ -12,6 +12,15 @@ export default function(config) {
     }).format(dateObj);
   });
 
+  // Add a custom Nunjucks filter for slicing arrays, to ensure compatibility
+  config.addNunjucksFilter("slice", (arr, start, end) => {
+    if (!Array.isArray(arr)) {
+      console.warn("Slice filter applied to non-array:", arr);
+      return arr;
+    }
+    return arr.slice(start, end);
+  });
+
   config.addCollection('projects', (collection) => {
     return collection.getFilteredByGlob('src/projects/*.md').sort((a, b) => {
       return new Date(b.data.year) - new Date(a.data.year);
