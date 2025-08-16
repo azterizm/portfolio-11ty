@@ -41,10 +41,8 @@ export default function(config) {
     collectionApi.getFilteredByGlob('src/blog/*.md').forEach(item => {
       if (item.data.tags) {
         item.data.tags.forEach(tag => {
-          // Exclude the 'post' tag if it's just a general category for all blog posts
-          if (tag !== 'post') {
-            tags.add(tag);
-          }
+          // Removed the exclusion for 'post' tag
+          tags.add(tag);
         });
       }
     });
