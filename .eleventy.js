@@ -30,6 +30,50 @@ export default function(config) {
     return posts.filter(post => post.data.tags && post.data.tags.includes(tag));
   });
 
+  // New custom filter to shuffle an array randomly
+  config.addFilter("shuffle", (arr) => {
+    if (!Array.isArray(arr)) {
+      console.warn("Shuffle filter applied to non-array:", arr);
+      return arr;
+    }
+    const shuffled = [...arr]; // Create a shallow copy to avoid modifying original array
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // ES6 swap
+    }
+    return shuffled;
+  });
+
+  // New custom filter to get related posts based on common tags, excluding current post, shuffled and limited
+  config.addFilter("getRelatedPosts", (allPosts, currentTags, currentUrl, limit = 3) => {
+    if (!Array.isArray(allPosts) || !Array.isArray(currentTags)) {
+      console.warn("getRelatedPosts filter received invalid input.");
+      return [];
+    }
+
+    const related = allPosts.filter(post => {
+      // Exclude the current post
+      if (post.url === currentUrl) {
+        return false;
+      }
+      // Check if the post has any common tags with the current post
+      if (post.data.tags && Array.isArray(post.data.tags)) {
+        return currentTags.some(tag => post.data.tags.includes(tag));
+      }
+      return false;
+    });
+
+    // Shuffle the related posts
+    const shuffledRelated = [...related];
+    for (let i = shuffledRelated.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledRelated[i], shuffledRelated[j]] = [shuffledRelated[j], shuffledRelated[i]];
+    }
+
+    // Return the limited number of shuffled posts
+    return shuffledRelated.slice(0, limit);
+  });
+
   config.addCollection('projects', (collection) => {
     return collection.getFilteredByGlob('src/projects/*.md').sort((a, b) => {
       return new Date(b.data.year) - new Date(a.data.year);

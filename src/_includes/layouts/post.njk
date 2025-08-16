@@ -35,3 +35,56 @@ layout: layouts/base.njk
         </div>
       </div>
 </div>
+
+{% set relatedArticles = collections.blog | getRelatedPosts(tags, page.url, 3) %}
+
+{% if relatedArticles.length > 0 %}
+<section class="mt-20 py-10">
+  <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">More Articles You Might Like</h2>
+  <div class="grid gap-8 md:gap-12 max-w-4xl mx-auto">
+    {% for post in relatedArticles %}
+    <article class="blog-card group cursor-pointer">
+      <a href="{{ post.url | url }}" class="block">
+        <div class="relative overflow-hidden rounded-2xl border-2 border-black bg-pure-white p-8 md:p-10 transition-all duration-500 hover:border-primary hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-2">
+
+          <!-- Date Badge -->
+          <div class="absolute top-6 right-6 bg-gradient-to-r from-primary to-primary-light text-white px-4 py-2 rounded-full text-sm font-medium">
+            {{ post.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) }}
+          </div>
+
+          <!-- Content -->
+          <div class="pr-20">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4 text-black group-hover:text-primary transition-colors duration-300">
+              {{ post.data.title }}
+            </h3>
+
+            <p class="text-lg md:text-xl text-black leading-relaxed mb-6">
+            {{ post.data.description }}
+            </p>
+            {%- if post.data.tags -%}
+            <div class="flex flex-wrap gap-2 mb-6">
+              {%- for tag in post.data.tags -%}
+              <span class="text-sm bg-background px-2 py-1 rounded">{{ tag }}</span>
+              {%- endfor -%}
+            </div>
+            {%- endif -%}
+
+            <!-- Read More Link -->
+            <div class="flex items-center text-primary font-semibold group-hover:text-primary transition-colors duration-300">
+              <span class="mr-2">Read Article</span>
+              <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Decorative Elements -->
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute -top-2 -left-2 w-16 h-16 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
