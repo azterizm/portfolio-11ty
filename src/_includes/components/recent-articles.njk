@@ -1,0 +1,74 @@
+<div id="recent-articles" class="py-20">
+  <div class="text-center mb-16">
+    <h2 class="text-6xl md:text-7xl font-bold mb-6 text-animate-recent" style="line-height:1.25;letter-spacing: -8px;">
+      <span style="--delay: 0.1s; --top: 100px;">R</span>
+      <span style="--delay: 0.15s; --top: 100px;">e</span>
+      <span style="--delay: 0.2s; --top: 100px;">c</span>
+      <span style="--delay: 0.25s; --top: 100px;">e</span>
+      <span style="--delay: 0.3s; --top: 100px;">n</span>
+      <span style="--delay: 0.35s; --top: 100px;">t</span>
+      <span style="--delay: 0.4s; --top: 100px;">&nbsp;</span>
+      <span style="--delay: 0.45s; --top: 100px;">A</span>
+      <span style="--delay: 0.5s; --top: 100px;">r</span>
+      <span style="--delay: 0.55s; --top: 100px;">t</span>
+      <span style="--delay: 0.6s; --top: 100px;">i</span>
+      <span style="--delay: 0.65s; --top: 100px;">c</span>
+      <span style="--delay: 0.7s; --top: 100px;">l</span>
+      <span style="--delay: 0.75s; --top: 100px;">e</span>
+      <span style="--delay: 0.8s; --top: 100px;">s</span>
+    </h2>
+    <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+      Stay updated with my latest thoughts and insights on web development and design.
+    </p>
+  </div>
+
+  <div class="max-w-4xl mx-auto">
+    <div class="grid gap-8 md:gap-12">
+      {%- for post in collections.blog | slice(0, 3) -%} {# Get latest 3 posts #}
+      <article class="blog-card group cursor-pointer recent-article-item">
+        <a href="{{ post.url | url }}" class="block">
+          <div class="relative overflow-hidden rounded-2xl border-2 border-gray-200 bg-white p-8 md:p-10 transition-all duration-500 hover:border-indigo-300 hover:shadow-2xl hover:shadow-indigo-100/50 hover:-translate-y-2">
+
+            <!-- Date Badge -->
+            <div class="absolute top-6 right-6 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+              {{ post.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) }}
+            </div>
+
+            <!-- Content -->
+            <div class="pr-20">
+              <h3 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">
+                {{ post.data.title }}
+              </h3>
+
+              <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
+                {{ post.data.description }}
+              </p>
+
+              <!-- Read More Link -->
+              <div class="flex items-center text-indigo-600 font-semibold group-hover:text-indigo-700 transition-colors duration-300">
+                <span class="mr-2">Read Article</span>
+                <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute -top-2 -left-2 w-16 h-16 bg-gradient-to-br from-yellow-100 to-orange-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+        </a>
+      </article>
+      {%- endfor -%}
+    </div>
+
+    <div class="text-center mt-16">
+      <a href="/blog/" class="px-8 py-4 bg-black text-white rounded-full text-xl font-semibold hover:scale-105 transition-transform inline-flex items-center justify-center">
+        See All Articles
+        <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
