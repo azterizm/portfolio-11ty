@@ -70,10 +70,16 @@
       {%- endfor -%}
       <div class="flex items-center justify-between max-w-4xl mx-auto w-full border-y-2 border-black py-8">
         <p class="flex-1 text-2xl font-bold text-black leading-relaxed w-full">Subscribe for new articles.</p>
-        <form action='https://formspree.io/f/xnnzrery' method='post' class="flex items-center justify-center gap-4 mt-2 ">
-          <input type="text" class='px-4 py-2 rounded-full border-2 border-black bg-background min-w-[20rem]' placeholder='person@example.com' name='email'/>
-          <button class='px-4 py-2 rounded-full bg-black text-white'>Submit</button>
-        </form>
+        <div id="newsletter-interaction-area" class="flex-shrink-0 w-full md:w-auto">
+          <form id="newsletter-form" class="flex flex-col md:flex-row items-center justify-center gap-4 mt-2 w-full">
+            <input type="email" id="newsletter-email" class='px-4 py-2 rounded-full border-2 border-black bg-background flex-grow min-w-0 md:min-w-[20rem]' placeholder='person@example.com' name='email' required/>
+            <button type="submit" id="newsletter-submit-btn" class='px-4 py-2 rounded-full bg-black text-white hover:bg-primary hover:text-white transition-colors duration-300 w-full md:w-auto'>Submit</button>
+          </form>
+          <div id="newsletter-success-message" class="hidden text-center mt-2">
+            <p class="text-xl font-semibold text-primary mb-4">Thank you for subscribing!</p>
+            <button id="newsletter-reset-btn" class="px-4 py-2 rounded-full bg-black text-white hover:bg-primary hover:text-white transition-colors duration-300">Subscribe again</button>
+          </div>
+        </div>
       </div>
     </div>
 
