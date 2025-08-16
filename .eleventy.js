@@ -2,6 +2,16 @@ export default function(config) {
   config.addPassthroughCopy('src/css')
   config.addPassthroughCopy('src/assets');
   config.addWatchTarget('src/css');
+
+  // Add a custom Nunjucks filter for date formatting
+  config.addFilter("readableDate", (dateObj) => {
+    return new Intl.DateTimeFormat('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    }).format(dateObj);
+  });
+
   config.addCollection('projects', (collection) => {
     return collection.getFilteredByGlob('src/projects/*.md').sort((a, b) => {
       return new Date(b.data.year) - new Date(a.data.year);
