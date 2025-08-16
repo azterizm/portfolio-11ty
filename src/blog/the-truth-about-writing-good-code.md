@@ -1,9 +1,9 @@
 ---
 layout: layouts/post.njk
 title: "The Truth about Writing \"Good\" Code"
-description: ""
+description: "This article challenges conventional wisdom about 'good' code, arguing that all code is technical debt, inherently temporary, and its value lies in functionality rather than perfection. It explores the impermanence of technology, the true worth of source code, and the harsh realities of developer recognition."
 date: "2025-08-17"
-tags: []
+tags: ["software development", "technical debt", "clean code", "programming", "career"]
 ---
 
 Wrote function with all the explicit types. Refactored long functions. The codebase is clean. Followed principles. Life is good.
@@ -53,4 +53,3 @@ Should you repeat the same process of perfectionism? Should you chase the illusi
 Write code that works. Learn constantly. Accept impermanence. Find joy in the process rather than attachment to the output.
 
 _Alhamdulillah_ - All praise is due to Allah. In this acceptance, there's freedom.
-
