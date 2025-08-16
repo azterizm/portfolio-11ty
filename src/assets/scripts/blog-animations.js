@@ -3,30 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Register GSAP ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
   
-  // Animate blog cards on scroll
-  gsap.utils.toArray('.blog-card').forEach((card, index) => {
-    gsap.fromTo(card, 
-      {
-        opacity: 0,
-        y: 60,
-        scale: 0.95
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        delay: index * 0.1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 95%",
-          end: "bottom 5%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  });
+  // Removed: Animate blog cards on scroll
+  // The previous code block for gsap.utils.toArray('.blog-card') has been removed.
   
   // Animate decorative elements on hover
   document.querySelectorAll('.blog-card').forEach(card => {
