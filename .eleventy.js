@@ -1,7 +1,12 @@
+import pluginRss from "@11ty/eleventy-plugin-rss";
+
 export default function(config) {
   config.addPassthroughCopy('src/css')
   config.addPassthroughCopy('src/assets');
   config.addWatchTarget('src/css');
+
+  // Add RSS plugin
+  config.addPlugin(pluginRss);
 
   // Add a custom Nunjucks filter for date formatting
   config.addFilter("readableDate", (dateObj) => {
