@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
   <title>{{ metadata.title }} Blog Feed</title>
   <subtitle>{{ metadata.description }}</subtitle>
   <link href="{{ metadata.url }}/feed.xml" rel="self"/>
-  <link href="{{ metadata.url }}/"/>
+  <link href="{{ metadata.url }}/" rel="alternate"/>
   <updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}/</id>
   <author>
@@ -22,7 +22,7 @@ eleventyExcludeFromCollections: true
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
     {# Use renderTransforms for better performance and correct URL handling, as recommended by plugin docs #}
-    <content type="html">{{ post.content | renderTransforms(post.data.page, metadata.url) | safe }}</content>
+    <content type="html"><![CDATA[{{ post.content | renderTransforms(post.data.page, metadata.url) | safe }}]]></content>
   </entry>
   {%- endfor %}
 </feed>
