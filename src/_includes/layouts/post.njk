@@ -1,13 +1,20 @@
 ---
 layout: layouts/base.njk
 ---
+
 <article class="prose lg:prose-xl mx-auto">
-  <h1>{{ title }}</h1>
+<a href="/blog/" class="inline-flex not-prose items-center text-primary font-semibold group">
+          <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Back to Blog
+        </a>
+  <h1 class='!mt-8'>{{ title }}</h1>
   <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 text-gray-500 text-sm mt-2 mb-4">
     <span class="whitespace-nowrap block">Published on {{ page.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
     {% if tags %}
       <span class="hidden sm:inline text-gray-400 mx-2">|</span>
-      <div class="flex flex-wrap gap-x-1 gap-y-1 mt-1 sm:mt-0">
+      <div class="flex flex-wrap gap-x-1 gap-y-1 mt-1 sm:mt-0 -ml-2 sm:ml-0">
         {% for tag in tags %}
           <a href="/tag/{{ tag }}/" class="text-xs text-indigo-600 no-underline hover:underline whitespace-nowrap px-2 py-1 rounded bg-gray-100">{{ tag }}</a>
         {% endfor %}
