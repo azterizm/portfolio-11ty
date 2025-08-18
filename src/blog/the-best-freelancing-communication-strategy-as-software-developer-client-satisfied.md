@@ -26,7 +26,7 @@ The process here is defined through the perspective of software developer. You c
 #### Weekly
 1. Create demo for the updates. Document each notable update and show them to the client. Learn what to show to the client and what not, for example the client prefers to see the UI that functions instead of security made from backend. 
 2. Report the progress. What was done this week and what was achieved. How clients can access the report, project, its logs and tracking system.
-3. What is going to be the next goal? Share the work that will be done in the next iteration. You have all this planned. If not, reference [[The best freelancing software development strategy - Client Satisfied!]]
+3. What is going to be the next goal? Share the work that will be done in the next iteration. You have all this planned. If not, reference [The best freelancing software development strategy - Client Satisfied!](https://azterizm.com/blog/the-best-freelancing-software-development-strategy-client-satisfied/).
 
 #### Monthly
 1. Resource utilisation. Check how many resources were used and how much. Account where the resources are needed the most and optimise there.
@@ -50,6 +50,9 @@ The approach that I have shared is what is used by me at the time of writing thi
 7. Docker: deployment
 
 I wrote 3 articles that are interconnected with each other for full software development process for freelancing. This is Communication.
+
 Links:
-[[The best freelancing software development strategy - Client Satisfied!]]
-[[The best freelancing feature prioritisation strategy as software developer - Client Satisfied!]]
+
+[The best freelancing software development strategy - Client Satisfied!](https://azterizm.com/blog/the-best-freelancing-software-development-strategy-client-satisfied/)
+
+[The best freelancing feature prioritisation strategy as software developer - Client Satisfied!](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer-client-satisfied/)

@@ -48,5 +48,5 @@ Combine these models or use one of them to create feature prioritisation. Develo
 
 I wrote 3 articles that are interconnected with each other for full software development process for freelancing. This is Communication.
 Links:
-[[The best freelancing software development strategy - Client Satisfied!]]
-[[The best freelancing communication strategy as software developer - Client Satisfied!]]
+[The best freelancing software development strategy - Client Satisfied!](https://azterizm.com/blog/the-best-freelancing-software-development-strategy-client-satisfied/)
+[The best freelancing communication strategy as software developer - Client Satisfied!](https://azterizm.com/blog/the-best-freelancing-communication-strategy-as-software-developer-client-satisfied/)

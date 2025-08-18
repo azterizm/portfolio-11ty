@@ -20,7 +20,7 @@ I wrote 3 articles in general that are interconnected with each other for full s
 7. Scalability
 8. Infrastructure (server) requirements
 9. Third party service integrations
-10. Prioritise features (reference [[Software Development Strategy#Features Prioritization]])
+10. Prioritise features (reference [Features Prioritization](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer-client-satisfied/))
 ### Select Technology
 1. Backend framework (ex. NestJS, ExpressJS)
 2. Frontend framework (ex. ReactJS) {or combined (ex. NextJS, RemixJS)}
@@ -71,7 +71,10 @@ This is iterative process to develop the rest of the application and process new
 **Rate limit:** It's better to add it where possible. Make realistic limits to ensure server takes load as expected. Even normal user should get rate limit. While it is bad for user experience, it will at least keep the website functioning as expected and also substantially decrease the risk of attacks on the server. How much you should put the limit depends on the functionality and capability of the server.
 
 I wrote 3 articles that are interconnected with each other for full software development process for freelancing. This is Communication.
+
 Links:
-[[The best freelancing communication strategy as software developer - Client Satisfied!]]
-[[The best freelancing feature prioritisation strategy as software developer - Client Satisfied!]]
+
+[The best freelancing communication strategy as software developer - Client Satisfied!](https://azterizm.com/blog/the-best-freelancing-communication-strategy-as-software-developer-client-satisfied/)
+
+[The best freelancing feature prioritisation strategy as software developer - Client Satisfied!](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer-client-satisfied/)
 
