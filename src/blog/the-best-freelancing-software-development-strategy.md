@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "The Best Freelancing Software Development Strategy - Client Satisfied!"
+title: "The Best Freelancing Software Development Strategy"
 description: "A comprehensive blueprint for freelance software development, covering system design, technology selection, MVP, and iterative enhancements."
 date: "2025-07-20"
 tags: ["freelancing", "software-development", "strategy", "project-management", "MVP"]
@@ -20,7 +20,7 @@ I wrote 3 articles in general that are interconnected with each other for full s
 7. Scalability
 8. Infrastructure (server) requirements
 9. Third party service integrations
-10. Prioritise features (reference [Features Prioritization](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer-client-satisfied/))
+10. Prioritise features (reference [Features Prioritization](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer/))
 ### Select Technology
 1. Backend framework (ex. NestJS, ExpressJS)
 2. Frontend framework (ex. ReactJS) {or combined (ex. NextJS, RemixJS)}
@@ -74,7 +74,7 @@ I wrote 3 articles that are interconnected with each other for full software dev
 
 Links:
 
-[The best freelancing communication strategy as software developer - Client Satisfied!](https://azterizm.com/blog/the-best-freelancing-communication-strategy-as-software-developer-client-satisfied/)
+[The best freelancing communication strategy as software developer](https://azterizm.com/blog/the-best-freelancing-communication-strategy-as-software-developer/)
 
-[The best freelancing feature prioritisation strategy as software developer - Client Satisfied!](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer-client-satisfied/)
+[The best freelancing feature prioritisation strategy as software developer](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer/)
 
