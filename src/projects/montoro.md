@@ -29,7 +29,7 @@ Developing Montoro presented several technical challenges:
 Montoro has been successfully developed as a functional and robust proof-of-concept, meeting all the objectives outlined for a final year capstone project. It stands as a testament to the effective integration of modern web development practices with cutting-edge AI.
 
 
-![Screenshot 6](/assets/screenshots/montoro/screenshot6.png)
+![Screenshot 6](/assets/screenshots/montoro/screenshot6.webp)
 ![Screenshot 1](/assets/screenshots/montoro/screenshot1.png)
 ![Screenshot 2](/assets/screenshots/montoro/screenshot2.png)
 
