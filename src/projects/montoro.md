@@ -5,7 +5,7 @@ description: "Functioning as a \"digital second brain,\" Montoro allows users to
 logo: "/assets/logos/montoro.png"
 main_image: "/assets/screenshots/montoro/main.png"
 technologies: [ "React Router v7", "TypeScript", "React", "Tailwind CSS", "Framer Motion", "Drizzle ORM", "ChromaDB", "Redis", "Zod", "Remeda", "date-fns" ]
-year: 2025
+year: 2024
 roles: ["Full stack developer", "Researcher", "UI/UX designer", "Technical writer", "Presenter"]
 project_link: "https://github.com/azterizm/montoro-public"
 company: IMSA Hyderabad
