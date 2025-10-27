@@ -1,100 +1,54 @@
-<div id="recent-articles" class="py-20">
-  <div class="text-center mb-16">
-    <h2 class="text-6xl md:text-7xl font-bold mb-6 text-animate-recent" style="line-height:1.25;letter-spacing: -10px;">
-      <span style="--delay: 0.1s; --top: 100px;">R</span>
-      <span style="--delay: 0.15s; --top: 100px;">e</span>
-      <span style="--delay: 0.2s; --top: 100px;">c</span>
-      <span style="--delay: 0.25s; --top: 100px;">e</span>
-      <span style="--delay: 0.3s; --top: 100px;">n</span>
-      <span style="--delay: 0.35s; --top: 100px;">t</span>
-      <span style="--delay: 0.4s; --top: 100px;">&nbsp;</span>
-      <span style="--delay: 0.45s; --top: 100px;">A</span>
-      <span style="--delay: 0.5s; --top: 100px;">r</span>
-      <span style="--delay: 0.55s; --top: 100px;">t</span>
-      <span style="--delay: 0.6s; --top: 100px;">i</span>
-      <span style="--delay: 0.65s; --top: 100px;">c</span>
-      <span style="--delay: 0.7s; --top: 100px;">l</span>
-      <span style="--delay: 0.75s; --top: 100px;">e</span>
-      <span style="--delay: 0.8s; --top: 100px;">s</span>
-    </h2>
-    <p class="text-xl md:text-2xl text-black max-w-2xl mx-auto leading-relaxed">
-      Stay updated with my latest thoughts and insights on development, design, and philosophy.
-    </p>
-    
+<div id='recent-articles'>
+  <div class="flex items-center justify-between z-10 sticky top-2 left-0">
+    <h2 class="bg-white/10 backdrop-blur-lg text-8xl">recent articles</h2>
+    <a href="/blog/" class="p-4 bg-white border-2 border-black rounded-full cross-fade-link hover:scale-105 transition-transform inline-flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
+        <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+      </svg>
+    </a>
   </div>
 
-  <div class="max-w-7xl mx-auto"> {# Changed from max-w-4xl to max-w-7xl #}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> {# Changed from single column to responsive grid layout #}
-      {%- for post in collections.blog | slice(0, 3) -%} {# Get latest 3 posts #}
-      <article class="blog-card group cursor-pointer"> {# Removed recent-article-item #}
-        <a href="{{ post.url | url }}" class="block h-full"> {# Added h-full #}
-          <div class="relative overflow-hidden rounded-xl border-2 border-black bg-pure-white p-6 transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 h-full flex flex-col"> {# Made cards more compact and consistent height #}
-
-            <!-- Date Badge -->
-            <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-medium"> {# Made date badge smaller and repositioned #}
-              {{ post.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }} {# Changed date format #}
+  <div class="mt-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {%- for post in collections.blog | slice(0, 3) -%}
+      <article class="blog-card group cursor-pointer">
+        <a href="{{ post.url | url }}" class="block h-full">
+          <div class="relative overflow-hidden rounded-xl border-2 border-black bg-pure-white p-5 transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 h-full flex flex-col">
+            <div class="absolute top-3 right-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium">
+              {{ post.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }}
             </div>
-
-            <!-- Content -->
-            <div class="pr-16 flex-1 flex flex-col"> {# Reduced padding and made content flex to fill space #}
-              <h3 class="text-xl md:text-2xl font-bold mb-3 text-black group-hover:text-primary transition-colors duration-300 line-clamp-2"> {# Reduced heading size for better grid fit #}
+            <div class="pr-14 flex-1 flex flex-col">
+              <h3 class="text-lg md:text-xl font-bold mb-2 text-black group-hover:text-primary transition-colors duration-300 line-clamp-2">
                 {{ post.data.title }}
               </h3>
-
-              <p class="text-sm md:text-base text-black leading-relaxed mb-4 flex-1 line-clamp-3"> {# Made description smaller and limited lines #}
+              <p class="text-sm text-black leading-relaxed mb-3 flex-1 line-clamp-2">
                 {{ post.data.description }}
               </p>
               {%- if post.data.tags -%}
-              <div class="flex flex-wrap gap-1 mb-4"> {# Made tags smaller and limited to 2 tags #}
+              <div class="flex flex-wrap gap-1 mb-3">
                 {%- for tag in post.data.tags | slice(0, 2) -%}
-                <span class="text-xs bg-background px-2 py-1 rounded text-black">{{ tag }}</span> {# Added text-black #}
+                <span class="text-xs bg-background px-2 py-1 rounded text-black">{{ tag }}</span>
                 {%- endfor -%}
                 {%- if post.data.tags.length > 2 -%}
                 <span class="text-xs text-primary mt-1">+{{ post.data.tags.length - 2 }} more</span>
                 {%- endif -%}
               </div>
               {%- endif -%}
-
-              <!-- Read More Link -->
-              <div class="flex items-center text-primary font-medium text-sm group-hover:text-primary transition-colors duration-300 mt-auto"> {# Made read more link smaller and positioned at bottom #}
+              <div class="flex items-center text-primary font-medium text-sm group-hover:text-primary transition-colors duration-300 mt-auto">
                 <span class="mr-2">Read Article</span>
-                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"> {# Made SVG smaller #}
+                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
               </div>
             </div>
-
-            <!-- Decorative Elements -->
-            <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-primary/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> {# Made decorative elements smaller and more subtle #}
-            <div class="absolute -top-1 -left-1 w-8 h-8 bg-secondary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> {# Made decorative elements smaller and more subtle #}
+            <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-primary/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute -top-1 -left-1 w-6 h-6 bg-secondary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </a>
       </article>
       {%- endfor -%}
     </div>
-
-    {# Newsletter section moved outside the grid #}
-    <div class="flex flex-col md:flex-row items-center md:justify-between max-w-4xl mx-auto w-full border-y-2 border-black py-8 newsletter-section mt-16"> {# Added mt-16 for spacing #}
-      <p class="flex-1 text-2xl font-bold text-black leading-relaxed w-full mb-4 md:mb-0">Subscribe for new articles.</p>
-      <div class="newsletter-component flex-shrink-0 w-full md:w-auto">
-        <form data-newsletter-form class="flex flex-col md:flex-row items-center justify-center gap-4 mt-2 w-full">
-          <input type="email" data-newsletter-email class='px-4 py-2 rounded-full border-2 border-black bg-background flex-grow min-w-0 w-full md:min-w-[20rem]' placeholder='person@example.com' name='email' required/>
-          <button type="submit" data-newsletter-submit-btn class='px-4 py-2 rounded-full bg-black text-white hover:bg-primary hover:text-white transition-colors duration-300 w-full md:w-auto'>Submit</button>
-        </form>
-        <div data-newsletter-success-message class="hidden text-center mt-2">
-          <p class="text-xl font-semibold text-primary mb-4">Thank you for subscribing!</p>
-          <button data-newsletter-reset-btn class="px-4 py-2 rounded-full bg-black text-white hover:bg-primary hover:text-white transition-colors duration-300">Subscribe again</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center mt-16">
-      <a href="/blog/" class="px-8 py-4 bg-black text-white rounded-full text-xl font-semibold hover:scale-105 transition-transform inline-flex items-center justify-center">
-        See All Articles
-        <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </a>
-    </div>
   </div>
+
+
 </div>
