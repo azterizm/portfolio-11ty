@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy && tailwindcss -i ./src/_includes/tailwind.css -o ./_site/tailwind.css",
-    "start": "npx @11ty/eleventy --serve",
+    "build:css": "NODE_ENV=production tailwindcss -i ./src/_includes/tailwind.css -o ./src/css/tailwind.css --minify",
+    "build:site": "npx @11ty/eleventy",
+    "build": "rm -rf _site && npm run build:css && npm run build:site",
+    "start": "tailwindcss -i ./src/_includes/tailwind.css -o ./src/css/tailwind.css && (tailwindcss -i ./src/_includes/tailwind.css -o ./src/css/tailwind.css --watch & npx @11ty/eleventy --serve)",
     "watch": "npx @11ty/eleventy --watch",
-    "css": "tailwindcss -i ./src/_includes/tailwind.css -o ./_site/tailwind.css --watch"
+    "css": "tailwindcss -i ./src/_includes/tailwind.css -o ./src/css/tailwind.css --watch"
   },
   "keywords": [],
   "author": "",

@@ -1,4 +1,6 @@
 import pluginRss from "@11ty/eleventy-plugin-rss";
+import fs from "node:fs";
+import crypto from "node:crypto";
 
 export default function(config) {
   config.addPassthroughCopy('src/css')
@@ -7,6 +9,24 @@ export default function(config) {
 
   // Add RSS plugin
   config.addPlugin(pluginRss);
+
+  // Asset version filter for cache busting
+  config.addFilter("assetVersion", (path) => {
+    const normalized = path.startsWith('/') ? path : `/${path}`;
+    const fullPath = `src${normalized}`;
+    try {
+      const stat = fs.statSync(fullPath);
+      const hash = crypto
+        .createHash('md5')
+        .update(String(stat.mtimeMs))
+        .digest('hex')
+        .slice(0, 10);
+      return hash;
+    } catch (e) {
+      // When file isn't built yet (first dev render), return empty version
+      return '';
+    }
+  });
 
   // Add a custom Nunjucks filter for date formatting
   config.addFilter("readableDate", (dateObj) => {
