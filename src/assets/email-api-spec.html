@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email-to-API MVP - Technical Specification</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e4e4e7;
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #0f172a;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 3px solid #1e40af;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #dbeafe;
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        nav {
+            background: #1e293b;
+            padding: 20px 40px;
+            border-bottom: 1px solid #334155;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-right: 25px;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: #60a5fa;
+            font-size: 2em;
+            margin: 50px 0 25px 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #1e40af;
+            font-weight: 600;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #38bdf8;
+            font-size: 1.5em;
+            margin: 35px 0 20px 0;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: #a5b4fc;
+            font-size: 1.2em;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: #cbd5e1;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            color: #cbd5e1;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #e0e7ff;
+            font-weight: 600;
+        }
+
+        code {
+            background: #1e293b;
+            color: #fbbf24;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            border: 1px solid #334155;
+        }
+
+        pre {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid #334155;
+            border-left: 4px solid #3b82f6;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            border: none;
+            color: #e0e7ff;
+        }
+
+        .info-box {
+            background: #1e3a5f;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+
+        .warning-box {
+            background: #3a2e1e;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+
+        .success-box {
+            background: #1e3a2e;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #334155, transparent);
+            margin: 60px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: #1e293b;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #334155;
+            color: #e0e7ff;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #334155;
+            color: #cbd5e1;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li:before {
+            content: "☐ ";
+            color: #60a5fa;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1e40af;
+            color: #dbeafe;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .badge-success {
+            background: #065f46;
+            color: #d1fae5;
+        }
+
+        .badge-warning {
+            background: #92400e;
+            color: #fef3c7;
+        }
+
+        footer {
+            background: #1e293b;
+            padding: 30px 40px;
+            text-align: center;
+            color: #64748b;
+            border-top: 1px solid #334155;
+            margin-top: 60px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            .container {
+                box-shadow: none;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Email-to-API MVP</h1>
+            <p class="subtitle">Technical Specification Document</p>
+        </header>
+
+        <nav>
+            <a href="#phase1">Phase 1</a>
+            <a href="#auth">Authentication</a>
+            <a href="#ingestion">Email Ingestion</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#api">REST API</a>
+            <a href="#billing">Billing</a>
+            <a href="#monitoring">Monitoring</a>
+            <a href="#security">Security</a>
+        </nav>
+
+        <div class="content">
+          <p style="text-align:center;">Naming convension may slightly change during development.</p>
+            <h2 id="phase1">Phase 1: Core Implementation</h2>
+
+            <h3 id="auth">1. Authentication & User Management</h3>
+            
+            <h4>User Registration</h4>
+            <ul>
+                <li>Password-based authentication with minimum 8 characters</li>
+                <li>Passwords stored using bcrypt hashing</li>
+                <li>JWT tokens for session management (15-minute access tokens, 7-day refresh tokens)</li>
+                <li>Each user receives a unique inbound email address: <code>{uuid}@{INBOUND_DOMAIN}</code></li>
+                <li>API key generation: <code>key_{secure_random_32_chars}</code></li>
+                <li>Default plan assignment: Free tier (10 emails/hour, 100MB storage)</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>Database Structure</strong><br>
+                Users table includes: <code>stripe_customer_id</code>, <code>plan_id</code>, <code>subscription_status</code>, <code>unique_email</code>, <code>api_key</code>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <h3 id="ingestion">2. Email Ingestion System</h3>
+
+            <h4>2.1 Webhook Security</h4>
+            <p>Endpoint: <code>POST /webhook/inbound-email</code></p>
+            <ul>
+                <li>Validate SendGrid webhook signature using HMAC verification</li>
+                <li>Reject requests with invalid signatures</li>
+                <li>Log all authentication attempts for security monitoring</li>
+            </ul>
+
+            <h4>2.2 Validation Pipeline</h4>
+            <p>Four-stage validation process:</p>
+            <ol>
+                <li><strong>Sender Verification</strong>: Confirm sender email matches registered user email</li>
+                <li><strong>Recipient Verification</strong>: Confirm recipient matches user's unique email address</li>
+                <li><strong>Rate Limit Check</strong>: Enforce plan-specific quotas using Redis (customised via .env)
+                    <ul>
+                        <li>Free tier: 10 emails per hour</li>
+                        <li>Pro tier: 100 emails per hour</li>
+                    </ul>
+                </li>
+                <li><strong>Storage Quota Check</strong>: Verify available storage within plan limits</li>
+            </ol>
+
+            <div class="warning-box">
+                <strong>Important:</strong> Failed validations trigger rejection with user notification via email.
+            </div>
+
+            <h4>2.3 Email Processing</h4>
+            
+            <p><strong>Subject Line Processing</strong></p>
+            <ul>
+                <li>Extract hashtags using pattern matching</li>
+                <li>Convert to lowercase and remove duplicates</li>
+                <li>Limit to first 20 tags to prevent abuse</li>
+            </ul>
+
+            <p><strong>Content Processing</strong></p>
+            <ul>
+                <li>Sanitize HTML to prevent XSS attacks using DOMPurify (more research required for best lib)</li>
+                <li>Convert sanitized HTML to Markdown using Turndown library (more research required for best lib)</li>
+                <li>Fall back to plain text if conversion fails</li>
+                <li>Store both Markdown and original HTML versions</li>
+            </ul>
+
+            <p><strong>Attachment Handling</strong></p>
+            <ul>
+                <li>Validate file types against whitelist: PDF, JPG, PNG, TXT, CSV</li>
+                <li>Enforce 10MB maximum size per file</li>
+                <li>Scan for malware using ClamAV (more research required for best lib) or AWS S3 scanning</li>
+                <li>Store files in S3 bucket or designated file system path</li>
+                <li>Generate secure access tokens for downloads</li>
+                <li>Record metadata in <code>email_attachments</code> table</li>
+            </ul>
+
+            <h4>2.4 Data Storage</h4>
+            
+            <p><strong>Email Records Table:</strong> <code>received_emails</code></p>
+            <ul>
+                <li>Core fields: subject, sender, recipient, tags array, markdown content, HTML content</li>
+                <li>Timestamps: received_at, delete_at (based on user retention setting: 1-72 hours)</li>
+                <li>Status tracking: success, parsing_failed, rejected</li>
+                <li>Indexed on user_id and received_at for query performance</li>
+            </ul>
+
+            <p><strong>Attachments Table:</strong> <code>email_attachments</code></p>
+            <ul>
+                <li>Fields: filename, size, mime_type, storage_path, secure_token</li>
+                <li>Cascade deletion when parent email is removed</li>
+            </ul>
+
+            <h4>2.5 Error Management</h4>
+            <p>When processing fails:</p>
+            <ul>
+                <li>Log detailed error information with correlation IDs</li>
+                <li>Send bounce-back notification to user's registered email</li>
+                <li>Create entry in dashboard error log</li>
+                <li>Optionally POST to user-configured webhook URL</li>
+            </ul>
+
+            <div class="section-divider"></div>
+
+            <h3 id="dashboard">3. User Dashboard (Authentication Required)</h3>
+
+            <h4>3.1 Overview Page</h4>
+            <p>Displays current usage metrics:</p>
+            <ul>
+                <li>Total emails received in current billing period</li>
+                <li>Rate limit usage: "87 of 100 emails used this hour"</li>
+                <li>Storage consumption with visual progress indicator</li>
+                <li>Activity feed showing most recent 10 emails</li>
+            </ul>
+
+            <h4>3.2 History Page</h4>
+            <p><strong>Email List View</strong></p>
+            <ul>
+                <li>Paginated display (20 items per page)</li>
+                <li>Columns: timestamp, subject, tags, processing status, available actions</li>
+                <li>Filtering options: date range, specific tags, fetched/unfetched status</li>
+                <li>Expandable detail view: full Markdown content and attachment list</li>
+                <li>Bulk operations: delete multiple emails, mark multiple as fetched</li>
+            </ul>
+
+            <h4>3.3 Settings Page</h4>
+            <p><strong>Account Information</strong></p>
+            <ul>
+                <li>Display unique email address with copy-to-clipboard function</li>
+                <li>Display API key with copy function and regeneration option</li>
+                <li>Show registered email address</li>
+            </ul>
+
+            <p><strong>Data Management</strong></p>
+            <ul>
+                <li>Adjustable retention period slider (1-72 hours)</li>
+                <li>Storage usage breakdown by email and attachments</li>
+                <li>Delete all data button with confirmation dialog</li>
+            </ul>
+
+            <p><strong>Notification Preferences</strong></p>
+            <ul>
+                <li>Toggle email alerts for processing failures</li>
+                <li>Toggle quota warning notifications (triggered at 80% usage)</li>
+            </ul>
+
+            <h4>3.4 Billing Management</h4>
+            <ul>
+                <li>Current plan information with visual badge</li>
+                <li>Comparison table showing usage against plan limits</li>
+                <li>Plan upgrade/downgrade buttons linking to Stripe Checkout</li>
+                <li>Subscription management portal via Stripe Customer Portal</li>
+            </ul>
+
+            <div class="section-divider"></div>
+
+            <h3 id="api">4. External REST API</h3>
+
+            <h4>4.1 Authentication</h4>
+            <ul>
+                <li>Header-based authentication: <code>X-API-Key: {user.api_key}</code></li>
+                <li>Plan-based rate limiting using Redis (customised via .env):
+                    <ul>
+                        <li>Free tier: 100 requests per hour</li>
+                        <li>Pro tier: 1000 requests per hour</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>4.2 Endpoint Specifications</h4>
+
+            <p><strong>List Emails</strong></p>
+            <pre><code>GET /external/emails
+
+Query Parameters:
+- limit: results per page (default: 20, maximum: 100)
+- offset: pagination offset
+- tags: comma-separated list (example: urgent,invoice)
+- from: start date in ISO format (example: 2025-10-01)
+- to: end date in ISO format (example: 2025-11-01)
+- fetched: filter by fetch status (true, false, or all)
+- sort: sorting order (desc or asc, default: desc)
+
+Response Headers:
+- X-Total-Count: total number of matching records
+- X-Page: current page number
+- X-Per-Page: items per page
+
+Response Body:
+Array of email objects containing:
+- id, datetime, subject, tags array
+- content (Markdown format), html (optional)
+- attachments array with: id, filename, size, mime_type, download_url
+- fetched_at timestamp (null if not yet fetched)</code></pre>
+
+            <p><strong>Retrieve Single Email</strong></p>
+            <pre><code>GET /external/emails/:id
+Returns: Complete email object with all fields and attachment details</code></pre>
+
+            <p><strong>Mark Email as Fetched</strong></p>
+            <pre><code>POST /external/emails/:id/mark-fetched
+Action: Sets fetched_at to current timestamp</code></pre>
+
+            <p><strong>Download Attachment</strong></p>
+            <pre><code>GET /external/attachments/:id
+- Verifies user ownership of parent email
+- Generates time-limited pre-signed URL (for S3) or streams file directly
+- Returns file with proper Content-Disposition header</code></pre>
+
+            <div class="section-divider"></div>
+
+            <h3 id="billing">5. Payment Integration (Stripe)</h3>
+
+            <h4>5.1 Plan Configuration</h4>
+            <p>Database table: <code>plans</code></p>
+            <ul>
+                <li>Fields: id, name, price_usd, stripe_price_id</li>
+                <li>Limits: email_limit_per_hour, storage_limit_mb, api_rate_limit_per_hour</li>
+            </ul>
+
+            <h4>5.2 Checkout Process</h4>
+            <pre><code>POST /billing/create-checkout-session
+Input: plan_id
+Creates Stripe session with:
+- customer email
+- selected price ID
+- success and cancellation redirect URLs
+Returns: checkout URL for redirect</code></pre>
+
+            <h4>5.3 Webhook Integration</h4>
+            <pre><code>POST /webhook/stripe
+Security: Verify signature using STRIPE_WEBHOOK_SECRET
+Handled Events:
+- checkout.session.completed: activate new subscription
+- customer.subscription.updated: sync plan changes
+- customer.subscription.deleted: mark subscription as cancelled
+- invoice.payment_failed: send payment failure alert
+Updates: subscription_status and plan_id in users table</code></pre>
+
+            <div class="section-divider"></div>
+
+            <h3 id="monitoring">6. Monitoring & Operations</h3>
+
+            <h4>6.1 Application Logging</h4>
+            <ul>
+                <li>Format: Structured JSON logs</li>
+                <li>Required fields: timestamp, severity level, correlation ID, user ID, event type, metadata</li>
+                <li>Output: Standard output, rotating file logs, and external monitoring service</li>
+            </ul>
+
+            <h4>6.2 Performance Metrics</h4>
+            
+            <p><strong>Counters</strong></p>
+            <ul>
+                <li>emails_received_total: all processed emails</li>
+                <li>emails_rejected_total: failed validations</li>
+                <li>api_requests_total: API endpoint hits</li>
+                <li>storage_bytes_used: current storage consumption</li>
+            </ul>
+
+            <p><strong>Response Time Tracking</strong></p>
+            <ul>
+                <li>email_parse_duration_seconds: processing time per email</li>
+                <li>api_response_time_seconds: API endpoint latency</li>
+                <li>attachment_download_duration_seconds: file transfer time</li>
+            </ul>
+
+            <h4>6.3 Scheduled Tasks</h4>
+            
+            <p><strong>Every 5 minutes</strong></p>
+            <ul>
+                <li>Delete emails past retention deadline</li>
+                <li>Remove orphaned attachment files</li>
+            </ul>
+
+            <p><strong>Hourly</strong></p>
+            <ul>
+                <li>Aggregate usage statistics per user</li>
+            </ul>
+
+            <p><strong>Daily</strong></p>
+            <ul>
+                <li>Send quota warning emails to users exceeding 80% of limits</li>
+                <li>Create database backup snapshots</li>
+            </ul>
+
+            <h4>6.4 Health Check Endpoint</h4>
+            <pre><code>GET /health
+Response includes:
+- overall status
+- database connectivity
+- Redis connectivity
+- storage accessibility
+- system uptime in seconds</code></pre>
+
+            <div class="section-divider"></div>
+
+            <h3 id="security">7. Security Requirements</h3>
+
+            <div class="success-box">
+                <strong>Webhook Protection</strong>
+                <ul style="margin-top: 10px;">
+                    <li>SendGrid signature verification for inbound emails</li>
+                    <li>Stripe signature verification for payment webhooks</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>Rate Limiting</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Email ingestion throttling per plan tier</li>
+                    <li>API request throttling per plan tier</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>Content Security</strong>
+                <ul style="margin-top: 10px;">
+                    <li>HTML sanitization to prevent XSS attacks</li>
+                    <li>Parameterized database queries to prevent SQL injection</li>
+                    <li>Cryptographically secure API key generation</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>File Security</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Attachment virus scanning before storage</li>
+                    <li>MIME type whitelist enforcement</li>
+                    <li>File size limit enforcement per upload</li>
+                    <li>Time-limited download URLs with secure tokens</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>Network Security</strong>
+                <ul style="margin-top: 10px;">
+                    <li>CORS restricted to dashboard domain</li>
+                    <li>HTTPS enforcement in production environment</li>
+                    <li>JWT token expiration with refresh rotation</li>
+                </ul>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <h3>8. Technology Stack</h3>
+
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Technology</th>
+                </tr>
+                <tr>
+                    <td><strong>Backend Framework</strong></td>
+                    <td>Node.js with Express</td>
+                </tr>
+                <tr>
+                    <td><strong>Primary Database</strong></td>
+                    <td>SQlite with optimized indexes</td>
+                </tr>
+                <tr>
+                    <td><strong>Cache & Queue</strong></td>
+                    <td>Redis for rate limiting and background jobs</td>
+                </tr>
+                <tr>
+                    <td><strong>File Storage</strong></td>
+                    <td>AWS S3 or local file system</td>
+                </tr>
+                <tr>
+                    <td><strong>Email Service</strong></td>
+                    <td>SendGrid Inbound Parse</td>
+                </tr>
+                <tr>
+                    <td><strong>Payment Processing</strong></td>
+                    <td>Stripe Checkout and Webhooks</td>
+                </tr>
+                <tr>
+                    <td><strong>Monitoring</strong></td>
+                    <td>Application monitoring service with PM2.io metrics</td>
+                </tr>
+                <tr>
+                    <td><strong>Security Scanning</strong></td>
+                    <td>ClamAV (more research required) for malware detection</td>
+                </tr>
+            </table>
+
+            <p><strong>Database Indexes (estimated):</strong></p>
+            <ul>
+                <li>users.unique_email</li>
+                <li>received_emails(user_id, received_at DESC)</li>
+                <li>email_attachments(email_id)</li>
+            </ul>
+
+            <div class="section-divider"></div>
+
+            <h3>9. Deployment Configuration</h3>
+
+            <h4>Required Environment Variables (may change)</h4>
+            <pre><code>DATABASE_URL=postgresql://...
+REDIS_URL=redis://...
+JWT_SECRET=...
+STRIPE_SECRET_KEY=sk_live_...
+STRIPE_PUBLISHABLE_KEY=pk_live_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+SENDGRID_WEBHOOK_SECRET=...
+INBOUND_EMAIL_DOMAIN=mail.yourapp.com
+AWS_S3_BUCKET=email-attachments
+STORAGE_PATH=/var/data/attachments</code></pre>
+
+            <h4>DNS Configuration</h4>
+            <ul>
+                <li>Configure MX record: <code>mail.yourapp.com</code> pointing to SendGrid servers</li>
+                <li>Set Inbound Parse webhook URL: <code>https://api.yourapp.com/webhook/inbound-email</code></li>
+            </ul>
+
+            <h4>Stripe Setup</h4>
+            <ul>
+                <li>Create products and pricing tiers in Stripe dashboard</li>
+                <li>Copy <code>stripe_price_id</code> values to database <code>plans</code> table</li>
+                <li>Test webhook delivery using Stripe CLI</li>
+            </ul>
+
+            <h4>SendGrid Configuration</h4>
+            <ul>
+                <li>Configure Inbound Parse for custom domain</li>
+                <li>Register webhook URL with optional authentication</li>
+                <li>Verify with test email delivery</li>
+            </ul>
+
+            <div class="section-divider"></div>
+
+            <h3>10. Success Criteria</h3>
+
+            <h4>Technical Performance</h4>
+            <p>These will be calculated using load testing and real-world data.</p>
+            <ul>
+                <li>Email processing completed within 2 seconds (95th percentile)</li>
+                <li>API response time under 200 milliseconds (95th percentile)</li>
+                <li>System uptime exceeding 99.5%</li>
+                <li>Zero incidents of data loss</li>
+            </ul>
+
+            <h4>Business Metrics</h4>
+            <p>We will track this using Google Analytics and other tools.</p>
+            <ul>
+                <li>User retention above 60% after 7 days</li>
+                <li>Conversion to paid plans above 5% within 30 days</li>
+                <li>Support ticket rate below 10% of user base</li>
+            </ul>
+
+            <div class="section-divider"></div>
+
+            <h3>Phase 2 Roadmap</h3>
+            
+            <p>Future enhancements after MVP launch:</p>
+            <ul>
+                <li>Webhook notifications for real-time email events</li>
+                <li>Email forwarding rules to external addresses</li>
+                <li>Full-text search using Elasticsearch</li>
+                <li>Client libraries for Node.js, Python, and PHP</li>
+                <li>Mobile application using React Native</li>
+                <li>Team collaboration features with shared inboxes</li>
+                <li>Advanced analytics dashboard</li>
+                <li>GDPR-compliant data export functionality</li>
+            </ul>
+
+            <div class="section-divider"></div>
+
+            <h3>Project Completion Checklist</h3>
+
+            <ul class="checklist">
+                <li>All core features deployed to production environment</li>
+                <li>Stripe integration tested in live mode with real transactions</li>
+                <li>SendGrid successfully receiving and forwarding emails</li>
+                <li>Dashboard fully functional with comprehensive test data</li>
+                <li>External API documented with Swagger/OpenAPI specification</li>
+                <li>Error monitoring and alerting configured</li>
+                <li>Load testing completed: 100 concurrent email deliveries</li>
+                <li>Security audit completed by qualified reviewer</li>
+                <li>Backup and disaster recovery procedures documented</li>
+                <li>Customer support workflow and escalation process defined</li>
+            </ul>
+
+            <div class="info-box" style="margin-top: 40px;">
+                <strong>Estimated Development Timeline:</strong> 4-6 weeks<br>
+                <strong>Critical Risk Areas:</strong> Attachment scanning performance under load, handling email delivery spikes, Stripe webhook delivery delays
+            </div>
+        </div>
+
+        <footer>
+            <p>Email-to-API MVP Technical Specification • Version 1.0 • 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
