@@ -227,11 +227,11 @@ milestones:
 * **Infrastructure:** Hetzner VPS
 * **Web Server:** Caddy (Reverse Proxy, Automatic SSL)
 * **Database:** SQLite (with automated backups via Litestream or similar)
-* **Backend:** Node.js / Express (or Fastify)
-* **Frontend:** Nunjucks (via 11ty for docs/landing), Tailwind CSS
+* **Backend:** Node.js / Express 
+* **Frontend:** React (via 11ty for docs/landing), Tailwind CSS
 * **Caching/Rate Limiting:** Redis
 * **Secrets:** .env.vault
-* **CI/CD:** GitHub Actions (or similar)
+* **CI/CD:** Bash
 * **Monitoring:** PM2, UptimeRobot
 * **Third-Party APIs:** SendGrid (Inbound Parse), Stripe (Billing)
 
