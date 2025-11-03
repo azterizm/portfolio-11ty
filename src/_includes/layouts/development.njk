@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{ title }} | Private Project Brief</title>
+  <meta name="description" content="{{ description or 'Private project brief and contract information' }}">
+  <meta name="author" content="{{ metadata.author.name }}">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="canonical" href="{{ metadata.url }}{{ page.url | url }}">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ metadata.url }}{{ page.url | url }}">
+  <meta property="og:title" content="{{ title }} | Private Project Brief">
+  <meta property="og:description" content="{{ description or 'Private project brief and contract information' }}">
+  <meta property="og:image" content="{{ metadata.url }}/assets/profile.webp">
+  <meta property="og:image:alt" content="Profile picture of {{ metadata.author.name }}">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ metadata.url }}{{ page.url | url }}">
+  <meta property="twitter:title" content="{{ title }} | Private Project Brief">
+  <meta property="twitter:description" content="{{ description or 'Private project brief and contract information' }}">
+  <meta property="twitter:image" content="{{ metadata.url }}/assets/profile.webp">
+  <meta name="twitter:image:alt" content="Profile picture of {{ metadata.author.name }}">
+
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/css/fonts.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/about.css" />
+  <link rel="stylesheet" href="/css/animate.css" />
+  <link rel="stylesheet" href="/css/services.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/scroll-to-top.css" />
+  <link rel="stylesheet" href="/css/tailwind.css?v={{ '/css/tailwind.css' | assetVersion }}" />
+</head>
+
+<body>
+  <div class="container mx-auto px-4">
+    {% include "components/navbar.njk" %}
+
+    <div id="page-wrapper" class="page-content my-16 no-fouc">
+      <div class="mb-6 flex items-center gap-3">
+        <span class="px-3 py-1 rounded-full text-xs font-medium border border-black bg-yellow-200">Private</span>
+        {% if status %}
+        <span class="px-3 py-1 rounded-full text-xs font-medium border border-black bg-white">
+          Status: {{ status | capitalize }}
+        </span>
+        {% endif %}
+        {% if contract_type %}
+        <span class="px-3 py-1 rounded-full text-xs font-medium border border-black bg-white">
+          {{ contract_type }}
+        </span>
+        {% endif %}
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold">{{ title }}</h1>
+      {% if description %}<p class="mt-2 text-gray-700">{{ description }}</p>{% endif %}
+
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        {% if client %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <div class="text-xs uppercase tracking-wide text-gray-600">Client</div>
+          <div class="mt-1 font-medium">{{ client }}</div>
+        </div>
+        {% endif %}
+
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <div class="text-xs uppercase tracking-wide text-gray-600">Timeline</div>
+          <div class="mt-1 font-medium">
+            {% if start_date %}{{ start_date | readableDate }}{% endif %}
+            {% if end_date %} — {{ end_date | readableDate }}{% endif %}
+          </div>
+        </div>
+
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <div class="text-xs uppercase tracking-wide text-gray-600">Budget</div>
+          <div class="mt-1 font-medium">
+            {% if currency %}{{ currency }} {% endif %}{% if budget %}{{ budget }}{% else %}-{% endif %}
+            {% if billing_model %}<span class="text-gray-600">({{ billing_model }})</span>{% endif %}
+          </div>
+        </div>
+
+        {% if payment_terms %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <div class="text-xs uppercase tracking-wide text-gray-600">Payment Terms</div>
+          <div class="mt-1 font-medium">{{ payment_terms }}</div>
+        </div>
+        {% endif %}
+
+        {% if timezone %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <div class="text-xs uppercase tracking-wide text-gray-600">Timezone</div>
+          <div class="mt-1 font-medium">{{ timezone }}</div>
+        </div>
+        {% endif %}
+
+        {% if project_code %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <div class="text-xs uppercase tracking-wide text-gray-600">Project Code</div>
+          <div class="mt-1 font-medium">{{ project_code }}</div>
+        </div>
+        {% endif %}
+      </div>
+
+      {% if links %}
+      <div class="mt-8 p-4 border border-black rounded-xl bg-white">
+        <div class="text-xs uppercase tracking-wide text-gray-600 mb-3">Links</div>
+        {% if links.repo or links.figma or links.staging or links.production or links.docs %}
+        <div class="grid md:grid-cols-2 gap-3">
+          {% if links.repo %}<a class="underline" target="_blank" href="{{ links.repo }}">Repository</a>{% endif %}
+          {% if links.figma %}<a class="underline" target="_blank" href="{{ links.figma }}">Figma</a>{% endif %}
+          {% if links.staging %}<a class="underline" target="_blank" href="{{ links.staging }}">Staging</a>{% endif %}
+          {% if links.production %}<a class="underline" target="_blank" href="{{ links.production }}">Production</a>{% endif %}
+          {% if links.docs %}<a class="underline" target="_blank" href="{{ links.docs }}">Docs</a>{% endif %}
+        </div>
+        {% else %}
+        <div class="text-gray-500 italic">No links available</div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if contacts %}
+      <div class="mt-8 p-4 border border-black rounded-xl bg-white">
+        <div class="text-xs uppercase tracking-wide text-gray-600 mb-3">Contacts</div>
+        <div class="grid md:grid-cols-2 gap-4">
+          {% for c in contacts %}
+          <div class="border border-black rounded-lg p-3">
+            <div class="font-medium">{{ c.name }}{% if c.role %} — {{ c.role }}{% endif %}</div>
+            <div class="text-sm text-gray-700">
+              {% if c.email %}<div>Email: <a class="underline" href="mailto:{{ c.email }}">{{ c.email }}</a></div>{% endif %}
+              {% if c.slack %}<div>Slack: {{ c.slack }}</div>{% endif %}
+              {% if not c.email and not c.slack %}<div class="text-gray-500 italic">No contact information available</div>{% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if milestones %}
+      <div class="mt-10">
+        <h2 class="text-2xl font-semibold">Milestones</h2>
+        <div class="mt-4 space-y-3">
+          {% for m in milestones %}
+          <div class="p-4 border border-black rounded-xl bg-white">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="font-medium">{{ m.title }}</div>
+              <div class="flex items-center gap-2">
+                {% if m.status %}<span class="px-2 py-0.5 text-xs rounded-full border border-black bg-white">{{ m.status | capitalize }}</span>{% endif %}
+                {% if m.invoice_amount %}<span class="text-sm">{{ currency or '' }} {{ m.invoice_amount }}</span>{% endif %}
+                {% if m.due_date %}<span class="text-sm text-gray-700">Due {{ m.due_date | readableDate }}</span>{% endif %}
+              </div>
+            </div>
+            {% if m.acceptance_criteria %}
+            <div class="mt-3">
+              <div class="text-xs uppercase tracking-wide text-gray-600">Acceptance Criteria</div>
+              <ul class="list-disc ml-6 mt-1">
+                {% for ac in m.acceptance_criteria %}
+                <li>{{ ac }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+            {% if m.deliverables %}
+            <div class="mt-3">
+              <div class="text-xs uppercase tracking-wide text-gray-600">Deliverables</div>
+              <ul class="list-disc ml-6 mt-1">
+                {% for d in m.deliverables %}
+                <li>{{ d }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if deliverables or scope or out_of_scope or assumptions or risks or dependencies or communication %}
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        {% if scope %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <h3 class="text-xl font-semibold">In Scope</h3>
+          <ul class="list-disc ml-6 mt-2">{% for i in scope %}<li>{{ i }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+
+        {% if out_of_scope %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <h3 class="text-xl font-semibold">Out of Scope</h3>
+          <ul class="list-disc ml-6 mt-2">{% for i in out_of_scope %}<li>{{ i }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+
+        {% if deliverables %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <h3 class="text-xl font-semibold">Deliverables</h3>
+          <ul class="list-disc ml-6 mt-2">{% for i in deliverables %}<li>{{ i }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+
+        {% if assumptions %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <h3 class="text-xl font-semibold">Assumptions</h3>
+          <ul class="list-disc ml-6 mt-2">{% for i in assumptions %}<li>{{ i }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+
+        {% if risks %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <h3 class="text-xl font-semibold">Risks</h3>
+          <ul class="list-disc ml-6 mt-2">{% for i in risks %}<li>{{ i }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+
+        {% if dependencies %}
+        <div class="p-4 border border-black rounded-xl bg-white">
+          <h3 class="text-xl font-semibold">Dependencies</h3>
+          <ul class="list-disc ml-6 mt-2">{% for i in dependencies %}<li>{{ i }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+
+        {% if communication %}
+        <div class="p-4 border border-black rounded-xl bg-white md:col-span-2">
+          <h3 class="text-xl font-semibold">Communication</h3>
+          <div class="mt-2">
+            {% if communication.cadence %}<div><span class="font-medium">Cadence:</span> {{ communication.cadence }}</div>{% endif %}
+            {% if communication.standup_time %}<div><span class="font-medium">Standup:</span> {{ communication.standup_time }}</div>{% endif %}
+            {% if communication.channels %}
+            <div class="mt-2">
+              <div class="text-sm text-gray-700">Channels</div>
+              <ul class="list-disc ml-6 mt-1">{% for ch in communication.channels %}<li>{{ ch }}</li>{% endfor %}</ul>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <div class="mt-12 prose prose-headings:text-black">
+        {{ content | safe }}
+      </div>
+    </div>
+
+    {% include "components/footer.njk" %}
+  </div>
+
+  {% include 'components/talk-btn.njk' %}
+  {% include 'components/scroll-to-top.njk' %}
+  {% include 'components/scripts.njk' %}
+</body>
+</html>
