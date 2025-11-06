@@ -5,7 +5,7 @@ description: Milestone-based development plan for an Email-to-API SaaS MVP, incl
 permalink: /development/michael-email-api/
 eleventyExcludeFromCollections: true
 
-client: Michael
+client: Kiran
 project_code: EMAIL-API-MVP-2025
 status: active
 contract_type: Fixed-price
@@ -23,7 +23,7 @@ links:
   docs:
 
 contacts:
-  - name: Michael
+  - name: Kiran
     role: Client / Product Owner
     email: # Via Upwork
     slack: # Via Upwork
@@ -167,9 +167,9 @@ milestones:
     acceptance_criteria:
       - Zero critical bugs reported by testers (you and me for now)
       - All documentation complete and accurate
-      - Michael can deploy updates independently using provided guide
+      - Kiran can deploy updates independently using provided guide
       - Load test passes - 1,000/day without downtime
-      - Michael receives access to all credentials (password manager)
+      - Kiran receives access to all credentials (password manager)
     deliverables:
       - Comprehensive Testing (Integration, E2E, Load)
       - Developer Handoff README.md
@@ -181,7 +181,7 @@ milestones:
     acceptance_criteria:
       - No outstanding critical bugs
       - System uptime - >99.5%
-      - Michael comfortable managing day-to-day operations
+      - Kiran comfortable managing day-to-day operations
       - All agreed support tasks completed
     deliverables:
       - Critical bug fixes (24h SLA)
