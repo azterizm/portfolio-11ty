@@ -25,7 +25,7 @@ links:
 contacts:
   - name: Kiran
     role: Client / Product Owner
-    email: # Via Upwork
+    email: mr.kirannarula@gmail.com	
     slack: # Via Upwork
   - name: Abdullah Memon
     role: Full Stack Developer
