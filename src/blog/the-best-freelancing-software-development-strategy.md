@@ -20,7 +20,7 @@ I wrote 3 articles in general that are interconnected with each other for full s
 7. Scalability
 8. Infrastructure (server) requirements
 9. Third party service integrations
-10. Prioritise features (reference [Features Prioritization](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer/))
+10. Prioritise features (reference [Features Prioritization](https://theimpossible.expert/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer/))
 ### Select Technology
 1. Backend framework (ex. NestJS, ExpressJS)
 2. Frontend framework (ex. ReactJS) {or combined (ex. NextJS, RemixJS)}
@@ -74,7 +74,7 @@ I wrote 3 articles that are interconnected with each other for full software dev
 
 Links:
 
-[The best freelancing communication strategy as software developer](https://azterizm.com/blog/the-best-freelancing-communication-strategy-as-software-developer/)
+[The best freelancing communication strategy as software developer](https://theimpossible.expert/blog/the-best-freelancing-communication-strategy-as-software-developer/)
 
-[The best freelancing feature prioritisation strategy as software developer](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer/)
+[The best freelancing feature prioritisation strategy as software developer](https://theimpossible.expert/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer/)
 

@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const apiUrl =
       window.location.hostname === "localhost"
         ? "http://localhost:3000/api/ipinfo/me"
-        : "https://api.azterizm.com/api/ipinfo/me";
+        : "https://api.theimpossible.expert/api/ipinfo/me";
 
     fetch(apiUrl)
       .then((response) => response.text())

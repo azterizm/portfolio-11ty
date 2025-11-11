@@ -26,7 +26,7 @@ The process here is defined through the perspective of software developer. You c
 #### Weekly
 1. Create demo for the updates. Document each notable update and show them to the client. Learn what to show to the client and what not, for example the client prefers to see the UI that functions instead of security made from backend. 
 2. Report the progress. What was done this week and what was achieved. How clients can access the report, project, its logs and tracking system.
-3. What is going to be the next goal? Share the work that will be done in the next iteration. You have all this planned. If not, reference [The best freelancing software development strategy](https://azterizm.com/blog/the-best-freelancing-software-development-strategy/).
+3. What is going to be the next goal? Share the work that will be done in the next iteration. You have all this planned. If not, reference [The best freelancing software development strategy](https://theimpossible.expert/blog/the-best-freelancing-software-development-strategy/).
 
 #### Monthly
 1. Resource utilisation. Check how many resources were used and how much. Account where the resources are needed the most and optimise there.
@@ -53,6 +53,6 @@ I wrote 3 articles that are interconnected with each other for full software dev
 
 Links:
 
-[The best freelancing software development strategy](https://azterizm.com/blog/the-best-freelancing-software-development-strategy/)
+[The best freelancing software development strategy](https://theimpossible.expert/blog/the-best-freelancing-software-development-strategy/)
 
-[The best freelancing feature prioritisation strategy as software developer](https://azterizm.com/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer/)
+[The best freelancing feature prioritisation strategy as software developer](https://theimpossible.expert/blog/the-best-freelancing-feature-prioritisation-strategy-as-software-developer/)
