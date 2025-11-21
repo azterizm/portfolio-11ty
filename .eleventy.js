@@ -37,6 +37,18 @@ export default function(config) {
     }).format(dateObj);
   });
 
+  // Add a custom Nunjucks filter for currency formatting
+  config.addFilter("formatBudget", (budget, currency) => {
+    if (typeof budget !== 'number') {
+      return budget; // Return as is if not a number
+    }
+    let formattedBudget = new Intl.NumberFormat('en-US').format(budget);
+    if (currency === 'USD') {
+      return `US$ ${formattedBudget}`;
+    }
+    return formattedBudget;
+  });
+
   // Add a custom Nunjucks filter for slicing arrays, to ensure compatibility
   config.addNunjucksFilter("slice", (arr, start, end) => {
     if (!Array.isArray(arr)) {

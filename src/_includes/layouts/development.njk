@@ -69,15 +69,19 @@
         <div class="p-4 border border-black rounded-xl bg-white">
           <div class="text-xs uppercase tracking-wide text-gray-600">Timeline</div>
           <div class="mt-1 font-medium">
-            {% if start_date %}{{ start_date | readableDate }}{% endif %}
-            {% if end_date %} — {{ end_date | readableDate }}{% endif %}
+            {% if timeline %}
+              {{ timeline }}
+            {% else %}
+              {% if start_date %}{{ start_date | readableDate }}{% endif %}
+              {% if end_date %} — {{ end_date | readableDate }}{% endif %}
+            {% endif %}
           </div>
         </div>
 
         <div class="p-4 border border-black rounded-xl bg-white">
           <div class="text-xs uppercase tracking-wide text-gray-600">Budget</div>
           <div class="mt-1 font-medium">
-            {% if currency %}{{ currency }} {% endif %}{% if budget %}{{ budget }}{% else %}-{% endif %}
+            {% if budget %}{{ budget | formatBudget(currency) }}{% else %}-{% endif %}
             {% if billing_model %}<span class="text-gray-600">({{ billing_model }})</span>{% endif %}
           </div>
         </div>
@@ -144,7 +148,7 @@
         <h2 class="text-2xl font-semibold">Milestones</h2>
         <div class="mt-4 space-y-3">
           {% for m in milestones %}
-          <div class="p-4 border border-black rounded-xl bg-white">
+          <div class="p-4 border border-black rounded-xl bg-white relative">
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="font-medium">{{ m.title }}</div>
               <div class="flex items-center gap-2">
@@ -173,6 +177,7 @@
               </ul>
             </div>
             {% endif %}
+            {% if m.timeline %}<span class="absolute bottom-[1rem] right-4 px-2 py-0.5 text-xs rounded-full border border-black bg-gray-100">{{ m.timeline }}</span>{% endif %}
           </div>
           {% endfor %}
         </div>
