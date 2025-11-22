@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Services
+permalink: /services/index.html
+---
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+  <h1 class="text-6xl font-bold">Our Services</h1>
+  <p class="text-xl mt-4 text-gray-600">I offer a comprehensive suite of services to build, launch, and grow your digital products. From initial strategy to final deployment, I'm your dedicated partner in innovation.</p>
+</div>
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 !mt-14">
+  <div class="space-y-20">
+    {% for service in services %}
+      <section id="{{ service.name | slug }}" class="py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-1">
+            <h2 class="text-4xl font-bold capitalize sticky top-24">{{ service.name }}</h2>
+          </div>
+          <div class="lg:col-span-2">
+            <p class="text-lg text-gray-700 leading-relaxed">{{ service.description }}</p>
+            <h3 class="text-2xl font-semibold mt-12 mb-6">{{ service.process_title }}</h3>
+            <ol class="list-decimal list-outside space-y-6 text-gray-700 pl-5">
+              {% for item in service.process %}
+                <li class="pl-2">{{ item | safe }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+        </div>
+      </section>
+      {% if not loop.last %}
+        <div class="border-b border-gray-200"></div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

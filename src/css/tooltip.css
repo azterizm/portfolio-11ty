@@ -1,0 +1,26 @@
+.tooltip {
+  position: absolute;
+  background-color: #f3f3ff;
+  color: #000040;
+  border: 2px solid #000040;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: default;
+  font-family: 'Satoshi-Medium', sans-serif;
+  white-space: normal;
+  max-width: 250px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.95) translateY(5px);
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}

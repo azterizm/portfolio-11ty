@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       container.innerHTML =
         '<div class="col-span-8 text-center py-8"><p class="text-xl">No projects available for your region.</p></div>';
     } else {
-      container.innerHTML = projects
+      container.innerHTML = projects.slice(0,6)
         .map(
           (project) => `
       <div class="col-span-8 lg:col-span-3 project-item flex flex-col">

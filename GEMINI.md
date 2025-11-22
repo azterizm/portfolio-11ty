@@ -49,6 +49,11 @@ To set up and run the project locally:
     ```
     This command first runs Eleventy to build the HTML and then compiles the Tailwind CSS.
 
+
+## Styling
+
+Reference to ./STYLE.md for styling conventions.
+
 ## Development Conventions
 
 *   **Templating:** Nunjucks is used for all dynamic content and page layouts. Custom Nunjucks filters are defined in `.eleventy.js` for tasks like date formatting, array manipulation (slice, shuffle), filtering posts by tags, and retrieving related posts.

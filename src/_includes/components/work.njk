@@ -10,7 +10,7 @@
 
   <!-- SEO-friendly initial projects - visible to search engines, hidden by JS after load -->
   <div id="projects-seo" class="grid grid-cols-8 mt-16 gap-x-8 gap-y-16">
-    {% for project in collections.projects %}
+    {% for project in collections.projects | slice(0, 6) %}
     {% if not project.data.blocked_countries or 'ALL' not in project.data.blocked_countries %}
     <div class="col-span-8 lg:col-span-3 project-item flex flex-col">
       <div class="relative">
@@ -42,32 +42,12 @@
     {% endfor %}
   </div>
 
-  <!-- Loading state - hidden by default, shown by JS -->
-  <div id="projects-loading" class="grid grid-cols-8 mt-16 gap-x-8 gap-y-16 hidden">
-    <div class="col-span-8 text-center py-8">
-      <p class="text-xl">Loading projects...</p>
-    </div>
-  </div>
-
-  <!-- Dynamic projects container - populated by JS -->
-  <div id="projects-container" class="grid grid-cols-8 mt-16 gap-x-8 gap-y-16 hidden">
-  </div>
-
-  <!-- Global projects data for JavaScript -->
-  <script>
-    window.projectsData = [
-      {% for project in collections.projects %}
-      {
-        title: {{ project.data.title | dump | safe }},
-        main_image: {{ project.data.main_image | dump | safe }},
-        logo: {{ project.data.logo | dump | safe }},
-        year: {{ project.data.year | dump | safe }},
-        description: {{ project.data.description | dump | safe }},
-        technologies: {{ project.data.technologies | dump | safe }},
-        url: {{ project.page.url | dump | safe }},
-        blocked_countries: {{ project.data.blocked_countries | default([]) | dump | safe }}
-      }{% if not loop.last %},{% endif %}
-      {% endfor %}
-    ];
-  </script>
+  {% if collections.projects.length > 6 %}
+  <a href="/work" class="w-full mt-16 py-4 px-8 bg-white border-2 border-black flex items-center justify-between rounded-full text-3xl">
+    <span>Show all {{ collections.projects.length }} projects</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#000000" viewBox="0 0 256 256">
+      <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+    </svg>
+  </a>
+  {% endif %}
 </div>

@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: Work
+permalink: /work/index.html
+---
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+  <h1 class="text-6xl font-bold">The Work</h1>
+  <p class="text-xl mt-4 text-gray-600">We take pride in delivering exceptional digital experiences. Here’s a selection of my recent projects.</p>
+</div>
+
+<div id='work' class="container mx-auto px-4 sm:px-6 lg:px-8 pb-16 !mt-14">
+  <div class="grid grid-cols-8 gap-x-8 gap-y-16">
+    {% for project in collections.projects %}
+      {% if not project.data.blocked_countries or 'ALL' not in project.data.blocked_countries %}
+        <div class="col-span-8 lg:col-span-3 project-item flex flex-col">
+          <a href='{{project.page.url}}' class="cross-fade-link">
+            <div class="relative">
+              <img src="{{ project.data.main_image }}" alt="{{project.data.title}}" class="w-full mb-4 rounded-xl main-image" />
+              <div class="p-4 bg-white/30 backdrop-blur-lg rounded-lg absolute top-4 left-4 ">
+                <img src="{{project.data.logo}}" alt="{{project.data.title}} logo" class="w-8 lg:w-16 project-logo" />
+              </div>
+            </div>
+            <p class="project-title text-3xl">{{project.data.title}}</p>
+          </a>
+          <p class="text-md">{{project.data.year}}</p>
+        </div>
+        <div class="col-span-8 lg:col-span-3 flex flex-col justify-between mt-4 lg:mt-0">
+          <p>{{ project.data.description }}</p>
+          <p class="mt-4 lg:mt-0 text-gray-600">{{project.data.technologies | join(', ')}}</p>
+        </div>
+        <div class="col-span-8 lg:col-span-2 flex flex-col justify-end mt-4 lg:mt-0">
+          <a href='{{project.page.url}}'
+            class="p-4 w-full bg-white border-2 border-black flex items-center justify-center rounded-full cross-fade-link mx-auto lg:mx-0 max-w-xs">
+            <span class="mr-2">View Project</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
+              <path
+                d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
+              </path>
+            </svg>
+          </a>
+        </div>
+        <div class="col-span-8 bg-gray-200 h-[1px]"></div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
