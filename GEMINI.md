@@ -52,12 +52,12 @@ To set up and run the project locally:
 
 ## Styling
 
-Reference to ./STYLE.md for styling conventions.
+See [STYLE.md](./STYLE.md) for detailed styling conventions, color palettes, and component guidelines.
 
 ## Development Conventions
 
 *   **Templating:** Nunjucks is used for all dynamic content and page layouts. Custom Nunjucks filters are defined in `.eleventy.js` for tasks like date formatting, array manipulation (slice, shuffle), filtering posts by tags, and retrieving related posts.
-*   **Styling:** Tailwind CSS is the primary styling framework. The configuration in `tailwind.config.js` includes custom color palettes, extended font sizes, and additional screen breakpoints.
+*   **Styling:** Tailwind CSS is the primary styling framework. The configuration in `tailwind.config.js` includes custom color palettes, extended font sizes, and additional screen breakpoints. Refer to [STYLE.md](./STYLE.md) for the comprehensive style guide.
 *   **Content Management:** Blog posts, projects, and testimonials are managed as individual Markdown files within their respective `src/` subdirectories.
 *   **SEO:** Extensive SEO meta tags (title, description, keywords, Open Graph, Twitter cards, canonical URL, RSS feed link) are implemented in `src/_includes/layouts/base.njk`, pulling data from `src/_data/metadata.json` and individual page front matter.
 *   **JavaScript:** Custom JavaScript files for various animations and functionalities are located in `src/assets/scripts/`.
