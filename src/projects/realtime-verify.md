@@ -10,6 +10,7 @@ year: 2025
 roles: ["Full stack developer", "Backend architect", "Database designer", "UI/UX designer"]
 company: Personal Project
 blocked_countries: ['CA']
+tech_sector: SaaS
 ---
 
 Realtime Verify is a comprehensive real-time email verification service built entirely from scratch as a personal project. This advanced platform helps users maintain email deliverability and protect sender reputation through sophisticated multi-stage validation and asynchronous processing architecture.

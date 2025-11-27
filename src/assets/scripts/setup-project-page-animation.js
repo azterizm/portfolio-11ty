@@ -11,7 +11,13 @@ function onScrolled() {
   lines.forEach(line => {
     line.style.width = 'calc(100% / 2.75)'
     line.style.marginLeft = 'auto'
-    line.nextElementSibling.style.opacity = '0'
+    
+    const label = line.nextElementSibling
+    const value = label.nextElementSibling
+    if (label && value) {
+      label.style.gridColumn = '6 / span 3'
+      value.style.gridColumn = '6 / span 3'
+    }
   })
   title.style.transform = `translateX(${detailsRect.left - containerMargin}px)`
   mainImage.style.opacity = '0'
@@ -21,7 +27,13 @@ function onUnscrolled() {
   lines.forEach(line => {
     line.style.width = 'calc(100%)'
     line.style.marginLeft = '0'
-    line.nextElementSibling.style.opacity = '1'
+    
+    const label = line.nextElementSibling
+    const value = label.nextElementSibling
+    if (label && value) {
+      label.style.gridColumn = ''
+      value.style.gridColumn = ''
+    }
   })
   title.style.transform = `translateX(0px)`
   mainImage.style.opacity = '1'

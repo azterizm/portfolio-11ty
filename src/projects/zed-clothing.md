@@ -8,6 +8,7 @@ technologies: ["RemixJS", "PrismaJS (MySQL)", "Framer Motion", "TailwindCSS", "Z
 year: 2024
 roles: ["Full stack developer", "UI/UX designer", "Researcher"]
 project_link: "https://github.com/azterizm/zed-clothing"
+tech_sector: e-commerce
 ---
 
 The Zed Clothing project was an ambitious and rewarding venture aimed at breaking free from reliance on Shopify and WordPress, instead creating a fully custom e-commerce platform. By implementing only the essentials, I transformed the shopping experience, enhancing speed, responsiveness, and animation while maintaining top-notch SEO optimization. The result is a unique, immersive platform that elevates e-commerce to an entirely new level.

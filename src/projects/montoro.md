@@ -9,6 +9,7 @@ year: 2024
 roles: ["Full stack developer", "Researcher", "UI/UX designer", "Technical writer", "Presenter"]
 project_link: "https://github.com/azterizm/montoro-public"
 company: IMSA Hyderabad
+tech_sector: AI/SaaS
 ---
 
 Montoro is an AI-powered personal knowledge management platform, conceived as a "digital second brain" to combat information overload. It provides a centralized, intelligent system for users to effortlessly organize, store, and retrieve their valuable knowledge from diverse sources. By integrating advanced AI capabilities, Montoro transforms fragmented information into an accessible and powerful personal asset.

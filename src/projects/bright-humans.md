@@ -7,9 +7,11 @@ logo: "/assets/logos/bright_humans.svg"
 main_image: "/assets/screenshots/bright-humans/main.png"
 technologies: ["React 19", "React Router 7", "TypeScript", "SQLite", "Drizzle ORM", "Redis", "TailwindCSS", "shadcn/ui", "Stripe", "Resend", "Sharp", "Zod"]
 year: 2025
+partner_since: 2023
 roles: ["Full stack developer", "System architect", "UI/UX designer", "Brand designer"]
 company: Independent
 blocked_countries: ['UK']
+tech_sector: EdTech
 ---
 
 ## Project Overview

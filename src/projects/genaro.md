@@ -7,9 +7,11 @@ logo: "/assets/logos/genaro.png"
 main_image: "/assets/screenshots/genaro/dashboard.jpeg"
 technologies: ["React Router v7", "Drizzle ORM (SQLite)", "TypeScript", "Tailwind CSS", "Stripe", "Zoom API", "Firebase", "Capacitor", "Web Push", "Redis"]
 year: 2025
+partner_since: 2023
 roles: ["Full stack developer", "System architect", "UI/UX designer", "Brand designer"]
 company: independent
 blocked_countries: ['UK']
+tech_sector: SaaS
 ---
 
 ## Project Overview

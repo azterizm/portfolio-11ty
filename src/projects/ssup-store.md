@@ -9,6 +9,8 @@ technologies: [ "MongoDB", "PayloadCMS", "ExpressJS", "StripeJS", "GSAP", "Remix
 year: 2024
 roles: ["Full stack developer", "Researcher", "UI/UX designer"]
 company: odesign
+partner_since: 2020
+tech_sector: e-commerce
 ---
 A modern e-commerce platform that brings humor to your wardrobe. Built with scalability in mind and powered by a robust tech stack, Ssup Store offers a delightful shopping experience for Gen Z fashionistas who aren't afraid to wear their hearts (and memes) on their sleeves.
 

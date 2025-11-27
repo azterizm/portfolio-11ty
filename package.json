@@ -6,7 +6,8 @@
     "build:css": "NODE_ENV=production tailwindcss -i ./src/_includes/tailwind.css -o ./src/css/tailwind.css --minify",
     "build:site": "npx @11ty/eleventy",
     "build": "rm -rf _site && npm run build:css && npm run build:site",
-    "start": "tailwindcss -i ./src/_includes/tailwind.css -o ./src/css/tailwind.css && (tailwindcss -i ./src/_includes/tailwind.css -o ./src/css/tailwind.css --watch & npx @11ty/eleventy --serve)",
+    "start": "npx @11ty/eleventy --serve",
+    "dev": "concurrently \"npm run start\" \"npm run css\" --kill-others",
     "watch": "npx @11ty/eleventy --watch",
     "css": "tailwindcss -i ./src/_includes/tailwind.css -o ./src/css/tailwind.css --watch"
   },
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
+    "concurrently": "^9.2.1",
     "tailwindcss": "^3.4.14"
   }
 }

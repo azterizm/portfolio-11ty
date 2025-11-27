@@ -1,0 +1,158 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Pricing & Philosophy" %}
+{% set description = "My approach to rating and pricing projects based on strategic alignment and complexity." %}
+
+{% block content %}
+
+<div id='pricing'>
+    {# Sticky Header / Hero #}
+    <div class="flex items-center justify-between sticky top-2 left-0 z-10 mb-12">
+      <h1 class="bg-white/10 backdrop-blur-lg text-5xl sm:text-7xl md:text-8xl font-bold leading-none lowercase">pricing & philosophy</h1>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <div class="lg:col-span-8 lg:col-start-3 space-y-16 text-lg leading-relaxed">
+            
+            {# Intro Section #}
+            <section>
+                <p class="font-medium text-2xl mb-6">
+                    My approach to rating and pricing projects is fundamentally different from transactional software agencies. I am a <strong class="text-black">full-cycle software engineering partner</strong> dedicated to building legacies, not completing checklists.
+                </p>
+                <p class="text-xl text-black/80 mb-6">
+                    Therefore, my "rating" system is based on <strong class="text-black">strategic alignment</strong> and <strong class="text-black">complexity</strong>—factors that justify my premium pricing and ensure a sustainable, long-term partnership.
+                </p>
+                <p class="text-xl text-black/80">
+                    I utilize a <strong>Product First Engineering</strong> philosophy, ensuring that the necessary strategic and foundational work is completed before any development begins.
+                </p>
+            </section>
+
+            <hr class="border-black/20" />
+
+            {# Section 1: The "Fantasise This" Litmus Test #}
+            <section>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold leading-tight text-black mb-8">
+                    Project <span class="text-primary">Rating</span>.<br>
+                </h2>
+                <p class="text-black/80 mb-8">
+                    I evaluate potential engagements against a rigorous filter—the "The Impossible" Litmus Test—to ensure they match my niche, which specializes in complexity. Projects that are <strong>transactional, imitative, or short-term</strong> are immediately rejected.
+                </p>
+
+                <div class="bg-white border-2 border-black rounded-3xl overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 border-b-2 border-black">
+                        <div class="p-8 bg-black text-white border-b-2 md:border-b-0 md:border-r-2 border-white/20">
+                            <h3 class="font-heading text-3xl mb-4">Elite / Visionary ✅</h3>
+                            <p class="text-sm opacity-80 mb-6">Projects I Pick</p>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-secondary">▪</span> Must be Visionary (doesn't exist yet) and Risk-embracing.
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-secondary">▪</span> Objective is a long-term partnership (2+ year vision).
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-secondary">▪</span> Prioritizes bespoke aesthetics and capability over simple conversion.
+                                </li>
+                            </ul>
+                            <div class="mt-8 pt-6 border-t border-white/20">
+                                <p class="font-bold text-secondary mb-2">Typical Scope:</p>
+                                <p class="text-xs leading-relaxed">Phase 1: Deep Dive, Custom AI/ML Engineering, 3D/Motion Web Experiences, System Automation, Continuous Retainer.</p>
+                            </div>
+                        </div>
+                        <div class="p-8 bg-background">
+                            <h3 class="font-heading text-3xl mb-4 text-black/50">Transactional ❌</h3>
+                            <p class="text-sm text-black/50 mb-6">Projects Rejected</p>
+                            <ul class="space-y-3 text-sm text-black/60">
+                                <li class="flex items-start gap-2">
+                                    <span>▪</span> Short-term, maintenance work.
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span>▪</span> Replication of existing CRUD apps.
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span>▪</span> Simple dropshipping stores.
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span>▪</span> Projects focused solely on quick fixes.
+                                </li>
+                            </ul>
+                            <div class="mt-8 pt-6 border-t border-black/10">
+                                <p class="text-xs text-black/50 italic">These projects do not fit my criteria for partnership.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-black/20" />
+
+            {# Section 2: Pricing Models #}
+            <section>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold leading-tight text-black mb-8">
+                    Pricing <span class="text-primary">Models</span>.<br>
+                    <span class="text-black/60">Predictability and certainty.</span>
+                </h2>
+                <p class="text-xl text-black/80 mb-12">
+                    I do not provide simple hourly rates or budget estimates in a single text or PDF, as price is intrinsically linked to the demonstrable value delivered.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {# Card 1 #}
+                    <div class="border-2 border-black rounded-3xl p-8 flex flex-col hover:bg-white transition-colors duration-300">
+                        <div class="mb-6">
+                            <span class="bg-secondary text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Outcome Focused</span>
+                        </div>
+                        <h3 class="font-heading text-3xl mb-4">Value-Based Pricing</h3>
+                        <p class="text-black/70 mb-6 flex-grow text-base">
+                            Fees are tied directly to the measurable business outcomes or anticipated ROI for the client.
+                        </p>
+                        <div class="text-sm border-t-2 border-black/10 pt-4">
+                            <p><strong>Context:</strong> Aiming for 5x ROI. Focuses on business outcomes like risk handling and cost savings.</p>
+                        </div>
+                    </div>
+
+                    {# Card 2 #}
+                    <div class="border-2 border-black rounded-3xl p-8 flex flex-col hover:bg-white transition-colors duration-300 bg-black text-white">
+                        <div class="mb-6">
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Project Phase</span>
+                        </div>
+                        <h3 class="font-heading text-3xl mb-4 text-white">Milestone Payments</h3>
+                        <p class="text-white/70 mb-6 flex-grow text-base">
+                            Development is structured around fixed milestones, with payments dispersed upon completion of value-backed deliverables.
+                        </p>
+                        <div class="text-sm border-t-2 border-white/20 pt-4 text-white/80">
+                            <p><strong>Context:</strong> Typical structure: 40% upfront, followed by phase completion percentages and final launch.</p>
+                        </div>
+                    </div>
+
+                    {# Card 3 #}
+                    <div class="border-2 border-black rounded-3xl p-8 flex flex-col hover:bg-white transition-colors duration-300 md:col-span-2">
+                        <div class="mb-6">
+                            <span class="bg-secondary text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Long Term</span>
+                        </div>
+                        <h3 class="font-heading text-3xl mb-4">Long-Term Retainer</h3>
+                        <p class="text-black/70 mb-6 flex-grow text-base">
+                            A fixed monthly fee secured after successful project delivery, essential for sustaining the long-term partnership.
+                        </p>
+                        <div class="text-sm border-t-2 border-black/10 pt-4">
+                            <p><strong>Context:</strong> Covers maintenance, security, and proactive research. Calculated based on risk mitigation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-black/20" />
+
+<a href="/services" class="w-full mt-8 py-4 px-8 bg-white border-2 border-black flex items-center justify-between rounded-full text-3xl">
+    <span>See services</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#000000" viewBox="0 0 256 256">
+      <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+    </svg>
+  </a>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

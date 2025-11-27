@@ -9,6 +9,8 @@ technologies: ["OpenAI", "ExpressJS", "Prisma", "Redis", "KitaJS", "StripeJS", "
 year: 2024
 roles: ["Full stack developer", "Researcher", "UI/UX designer"]
 company: odesign
+partner_since: 2020
+tech_sector: AI/SaaS
 ---
 It is a milestone achievement that represents my first in-depth integration of AI technology, combining innovative features with powerful performance. As a pioneering AI writing assistant, Brainy Page aims to offer writers an intelligent companion that enhances productivity, providing seamless tools for editing, idea generation, and grammar refinement. Every feature of the project has been meticulously crafted to optimize user experience, aiming to simplify and supercharge the writing process in ways competitors cannot match.
 

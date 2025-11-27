@@ -8,4 +8,5 @@ technologies: ["ElectronJS", "Typescript"]
 year: 2023
 roles: ["Full stack developer"]
 company: Best Shop Group, Georgia
+tech_sector: Enterprise Software
 ---

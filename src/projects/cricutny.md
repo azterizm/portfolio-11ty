@@ -7,8 +7,10 @@ logo: "/assets/logos/cricutny.svg"
 main_image: "/assets/screenshots/cricutny/cricutny1.png"
 technologies: ["RemixJS", "PrismaJS (MySQL)", "GSAP", "TailwindCSS", "Playwright", "KonvaJS", "QuillJS", "Stripe", "Lottie", "SharpJS", "SwiperJS", "SWR", "Redis"]
 year: 2024
+partner_since: 2020
 roles: ["Full stack developer", "UI/UX designer"]
 company: odesign
+tech_sector: e-commerce
 ---
 Cricutny underwent a comprehensive rebuilding effort, transforming an outdated and vulnerable platform into a robust, secure, and highly performant e-commerce solution. The initial version of Cricutny was plagued by critical issues, including severe performance bottlenecks, pervasive UI glitches, a compromised and inefficient admin dashboard, and glaring security vulnerabilities. These problems were systematically identified through rigorous testing, user feedback analysis, and deep dives into the existing codebase, which revealed an antiquated technology stack at its core.
 

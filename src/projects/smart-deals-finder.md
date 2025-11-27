@@ -9,6 +9,7 @@ technologies: ["React Router v7", "Vite", "Tailwind CSS v4", "Node.js", "SQLite"
 year: 2025
 roles: ["Full stack developer", "AI Engineer", "UI/UX designer", "Product Manager"]
 company: Personal Project
+tech_sector: AI/e-commerce
 ---
 
 Smart Deals Finder is an innovative AI-powered deal comparison platform that revolutionizes online shopping by finding the best deals across multiple e-commerce websites. As a personal project built entirely from scratch, it demonstrates my ability to create a complete product from concept to deployment, integrating cutting-edge AI technologies with practical business solutions.
