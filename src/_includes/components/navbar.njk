@@ -35,7 +35,7 @@
     </button>
   </div>
   <div id='mobile-nav'
-    class="fixed inset-0 z-50 flex h-[100dvh] w-screen flex-col bg-background px-6 py-8 opacity-0 pointer-events-none transition-opacity duration-300 overflow-hidden">
+    class="fixed inset-0 z-50 flex h-[100dvh] w-screen flex-col bg-background px-6 opacity-0 pointer-events-none transition-opacity duration-300 overflow-hidden overflow-y-auto">
     
     {# Header #}
     <div class="flex items-center justify-between">
@@ -51,7 +51,7 @@
     </div>
 
     {# Nav Links #}
-    <nav class="flex flex-1 flex-col justify-center space-y-4">
+    <nav class="flex flex-1 flex-col justify-start space-y-4 py-8">
       <a href='/services' class="font-heading text-5xl font-bold tracking-tight transition-colors duration-200 {{ 'text-primary' if '/services/' in page.url else 'text-black hover:text-primary' }}">services</a>
       <a href='/work' class="font-heading text-5xl font-bold tracking-tight transition-colors duration-200 {{ 'text-primary' if '/work/' in page.url or '/projects/' in page.url else 'text-black hover:text-primary' }}">work</a>
       <a href='/pricing' class="font-heading text-5xl font-bold tracking-tight transition-colors duration-200 {{ 'text-primary' if '/pricing/' in page.url else 'text-black hover:text-primary' }}">pricing</a>
@@ -65,7 +65,7 @@
     {# CTA #}
     <div class="mt-auto">
       <button
-        class="w-full rounded-full bg-black text-white flex items-center justify-between px-8 py-5 text-xl font-heading font-bold hover:scale-[1.02] transition-transform duration-200 group [&_a]:text-white">
+        class="w-full rounded-full bg-black text-white flex items-center justify-between px-8 py-5 text-xl font-heading font-bold hover:scale-[1.02] transition-transform duration-200 group [&_a]:text-white mb-4">
         <div class='talk-btn-content !text-white [&_*]:!text-white' data-tf-live="01JCSQ3SRMGCRG8X4HWB38Z62C">talk</div>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="transition-transform duration-200 group-hover:translate-x-1">
           <path
